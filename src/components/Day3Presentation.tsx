@@ -67,7 +67,7 @@ export default function Day3Presentation({ onClose }: Day3PresentationProps) {
         <ChevronRight size={32} />
       </button>
 
-      <div className="relative z-10 w-full max-w-[95vw] h-[90vh] flex flex-col items-center justify-center">
+      <div className="relative z-10 w-full max-w-[95vw] h-[90vh] flex flex-col items-center justify-start pt-8">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentSlide}
@@ -75,7 +75,7 @@ export default function Day3Presentation({ onClose }: Day3PresentationProps) {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 1.02, y: -10 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="w-full h-full flex flex-col justify-start pt-12 break-keep"
+            className="w-full h-full flex flex-col justify-start pt-4 break-keep"
           >
             {slide.type === "title" && (
               <div className="text-center flex flex-col items-center justify-start pt-20 h-full">
@@ -99,7 +99,7 @@ export default function Day3Presentation({ onClose }: Day3PresentationProps) {
                   <div className="text-green-neon mb-12">
                     {slide.icon}
                   </div>
-                  <h2 className="text-6xl font-black text-green-neon mb-16 font-display uppercase tracking-widest">
+                  <h2 className="text-5xl font-black text-green-neon mb-16 font-display uppercase tracking-widest">
                     {slide.title}
                   </h2>
                   {slide.content}
@@ -124,7 +124,7 @@ export default function Day3Presentation({ onClose }: Day3PresentationProps) {
                   </h2>
                 </div>
                 
-                <div className="glass-card p-12 rounded-4xl flex-grow flex flex-col justify-start pt-16 shadow-2xl overflow-hidden">
+                <div className="glass-card p-12 rounded-4xl flex-grow flex flex-col justify-start pt-12 shadow-2xl overflow-hidden">
                   <div className={`flex items-center gap-5 text-4xl font-black mb-8 pb-6 border-b-4 border-dashed ${
                     slide.theme === 'green' ? 'text-green-neon border-green-neon/30' : 
                     slide.theme === 'pink' ? 'text-pink-neon border-pink-neon/30' : 

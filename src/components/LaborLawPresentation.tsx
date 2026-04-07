@@ -274,7 +274,7 @@ export default function LaborLawPresentation({ onClose }: LaborLawPresentationPr
         <ChevronRight size={32} />
       </button>
 
-      <div className="relative z-10 w-full max-w-[95vw] h-[90vh] flex flex-col items-center justify-center">
+      <div className="relative z-10 w-full max-w-[95vw] h-[90vh] flex flex-col items-center justify-start pt-8">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentSlide}
@@ -282,7 +282,7 @@ export default function LaborLawPresentation({ onClose }: LaborLawPresentationPr
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 1.02, y: -10 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="w-full h-full flex flex-col justify-start pt-12 break-keep"
+            className="w-full h-full flex flex-col justify-start pt-4 break-keep"
           >
             {slide.type === "title" && (
               <div className="text-center flex flex-col items-center justify-start pt-20 h-full">
@@ -306,7 +306,7 @@ export default function LaborLawPresentation({ onClose }: LaborLawPresentationPr
                   <div className="text-cyan-neon mb-12">
                     {slide.icon}
                   </div>
-                  <h2 className="text-6xl font-black text-cyan-neon mb-16 font-display uppercase tracking-widest text-center">
+                  <h2 className="text-5xl font-black text-cyan-neon mb-16 font-display uppercase tracking-widest text-center">
                     {slide.title}
                   </h2>
                   {slide.content}
@@ -325,7 +325,7 @@ export default function LaborLawPresentation({ onClose }: LaborLawPresentationPr
                   </h2>
                 </div>
                 
-                <div className="glass-card p-12 rounded-4xl flex-grow flex flex-col justify-start pt-16 shadow-2xl overflow-hidden">
+                <div className="glass-card p-12 rounded-4xl flex-grow flex flex-col justify-start pt-12 shadow-2xl overflow-hidden">
                   <div className="flex items-center gap-5 text-4xl font-black mb-8 pb-6 border-b-4 border-dashed text-cyan-neon border-cyan-neon/30">
                     {slide.cardIcon}
                     {slide.cardTitle}

@@ -85,7 +85,7 @@ export const day1Slides: SlideData[] = [
     theme: "cyan",
     icon: React.createElement(Target, { size: 80 }),
     title: "교육 목표",
-    content: React.createElement("p", { className: "text-4xl md:text-5xl text-text-sub leading-relaxed text-center font-bold" }, 
+    content: React.createElement("p", { className: "text-3xl md:text-4xl text-text-sub leading-relaxed text-center font-bold" }, 
       "MICE 행사의 성공적인 시작을 위한 ", React.createElement("strong", { className: "text-white font-black" }, "‘기본 계획’"), " 수립 역량을 강화하고,", React.createElement("br"), React.createElement("br"),
       "행사 성격에 맞는 ", React.createElement("strong", { className: "text-cyan-neon font-black" }, "최적의 베뉴(Venue)"), "를 선정 및 장악하는 실무 기술을 습득함."
     ),
@@ -357,7 +357,7 @@ export const day2Slides: SlideData[] = [
     theme: "purple",
     icon: React.createElement(Target, { size: 80 }),
     title: "교육 목표",
-    content: React.createElement("p", { className: "text-4xl md:text-5xl text-text-sub leading-relaxed text-center font-bold" }, 
+    content: React.createElement("p", { className: "text-3xl md:text-4xl text-text-sub leading-relaxed text-center font-bold" }, 
       "확정된 기본 계획을 바탕으로 현장 운영의 성패를 결정짓는", React.createElement("br"),
       React.createElement("strong", { className: "text-white font-black" }, "‘실무 상세 매뉴얼’"), "과 ", React.createElement("strong", { className: "text-white font-black" }, "‘연출 대본’"), "을 완성하고,", React.createElement("br"), React.createElement("br"),
       "모든 물적·인적 자원의 배치를 ", React.createElement("strong", { className: "text-purple-neon font-black" }, "확정함.")
@@ -720,7 +720,7 @@ export const day3Slides: SlideData[] = [
     theme: "green",
     icon: React.createElement(Target, { size: 80 }),
     title: "교육 목표",
-    content: React.createElement("p", { className: "text-4xl md:text-5xl text-text-sub leading-relaxed text-center font-bold" }, 
+    content: React.createElement("p", { className: "text-3xl md:text-4xl text-text-sub leading-relaxed text-center font-bold" }, 
       "모든 제작물과 시스템의 ", React.createElement("strong", { className: "text-white font-black" }, "‘무결점 검수를 완료’"), "하고,", React.createElement("br"), React.createElement("br"),
       "현장 운영 인력의 숙련도를 실전 수준으로 끌어올려", React.createElement("br"), "발생 가능한 ", React.createElement("strong", { className: "text-green-neon font-black" }, "모든 리스크를 선제적으로 차단함.")
     ),
@@ -1067,7 +1067,7 @@ export const day4Slides: SlideData[] = [
     theme: "pink",
     icon: React.createElement(Rocket, { size: 80 }),
     title: "교육 목표",
-    content: React.createElement("p", { className: "text-4xl md:text-5xl text-text-sub leading-relaxed text-center font-bold" }, 
+    content: React.createElement("p", { className: "text-3xl md:text-4xl text-text-sub leading-relaxed text-center font-bold" }, 
       "실전 현장에서의 ", React.createElement("strong", { className: "text-white font-black" }, "‘완벽한 운영 및 위기 대응’"), " 능력을 발휘하고,", React.createElement("br"), React.createElement("br"),
       "행사 종료 후 ", React.createElement("strong", { className: "text-pink-neon font-black" }, "데이터 기반의 성과 분석"), "과", React.createElement("br"), "사후 관리를 통해 프로젝트를 성공적으로 완결함."
     ),
