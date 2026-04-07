@@ -13,6 +13,7 @@ import Day1Presentation from "./components/Day1Presentation";
 import Day2Presentation from "./components/Day2Presentation";
 import Day3Presentation from "./components/Day3Presentation";
 import Day4Presentation from "./components/Day4Presentation";
+import LaborLawPresentation from "./components/LaborLawPresentation";
 
 interface NavItemProps {
   day: string;
@@ -178,6 +179,7 @@ export default function App() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={() => setActiveView("appendix")}
             className="group flex items-center gap-4 px-8 py-4 glass-card rounded-full border-white/10 hover:border-yellow-neon/50 transition-all"
           >
             <div className="p-2 bg-yellow-neon/20 rounded-full text-yellow-neon">
@@ -241,6 +243,16 @@ export default function App() {
             className="fixed inset-0 z-[100]"
           >
             <Day4Presentation onClose={() => setActiveView(null)} />
+          </motion.div>
+        )}
+        {activeView === "appendix" && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100]"
+          >
+            <LaborLawPresentation onClose={() => setActiveView(null)} />
           </motion.div>
         )}
       </AnimatePresence>
