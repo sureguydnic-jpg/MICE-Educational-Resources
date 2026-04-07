@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Orbitron:wght@500;700;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Noto Sans KR", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Orbitron", sans-serif;
+  
+  --color-bg-base: #05080c;
+  --color-cyan-neon: #00e5ff;
+  --color-yellow-neon: #ffea00;
+  --color-pink-neon: #ff2a6d;
+  --color-green-neon: #00ff9d;
+  --color-purple-neon: #b026ff;
+  --color-orange-neon: #ff8c00;
+  --color-text-sub: #b0c4de;
+}
+
+@layer base {
+  body {
+    @apply bg-bg-base text-white font-sans overflow-hidden;
+  }
+}
+
+.neon-shadow-cyan {
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.3), 0 0 30px rgba(0, 229, 255, 0.1);
+}
+
+.neon-text-cyan {
+  text-shadow: 0 0 10px rgba(0, 229, 255, 0.5), 0 0 20px rgba(0, 229, 255, 0.3);
+}
+
+.glass-card {
+  background: rgba(10, 17, 24, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 229, 255, 0.15);
+}
+
+.bg-grid {
+  background-image: 
+    linear-gradient(rgba(0, 229, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 229, 255, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
