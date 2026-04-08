@@ -1,48 +1,83 @@
 import React, { useState } from "react";
 import { Download, Loader2, CheckCircle2 } from "lucide-react";
 import { jsPDF } from "jspdf";
-import html2canvas from "html2canvas";
+import * as htmlToImage from 'html-to-image';
 import { day1Slides } from "../data/slides";
 
 // We'll create a hidden container to render slides for PDF generation
 const PDFGenerator: React.FC<{ onComplete: (blob: Blob) => void; isGenerating: boolean }> = ({ onComplete, isGenerating }) => {
   if (!isGenerating) return null;
 
+  // Standard hex colors to avoid html2canvas parsing errors (oklab/oklch)
+  const colors = {
+    bg: "#05080c",
+    cyan: "#00e5ff",
+    white: "#ffffff",
+    textSub: "#b0c4de",
+    cardBg: "rgba(255, 255, 255, 0.05)",
+    border: "rgba(255, 255, 255, 0.1)"
+  };
+
   return (
-    <div id="pdf-render-container" className="fixed top-[-9999px] left-[-9999px] w-[1200px] bg-bg-base text-white p-20 space-y-20">
-      <div className="text-center space-y-4 mb-20">
-        <h1 className="text-5xl font-black text-cyan-neon">AI를 활용한 MICE인재 양성과정</h1>
-        <h2 className="text-3xl font-bold text-white">1일차: 기본 계획 및 사업 기반 구축</h2>
+    <div 
+      id="pdf-render-container" 
+      style={{ 
+        backgroundColor: colors.bg, 
+        color: colors.white,
+        position: 'fixed',
+        top: '-9999px',
+        left: '-9999px',
+        width: '1200px',
+        padding: '80px',
+        fontFamily: 'sans-serif'
+      }}
+    >
+      <div style={{ textAlign: 'center', marginBottom: '80px' }}>
+        <h1 style={{ fontSize: '48px', fontWeight: 900, color: colors.cyan, marginBottom: '16px' }}>AI를 활용한 MICE인재 양성과정</h1>
+        <h2 style={{ fontSize: '30px', fontWeight: 700, color: colors.white }}>1일차: 기본 계획 및 사업 기반 구축</h2>
       </div>
 
       {day1Slides.map((slide, index) => (
-        <div key={index} className="slide-page border-b border-white/10 pb-20 mb-20">
-          <div className="flex items-center gap-4 mb-8">
-            <span className="px-4 py-1 rounded-full border border-cyan-neon text-cyan-neon text-sm font-bold">
+        <div key={index} style={{ borderBottom: `1px solid ${colors.border}`, paddingBottom: '80px', marginBottom: '80px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '32px' }}>
+            <span style={{ 
+              padding: '4px 16px', 
+              borderRadius: '9999px', 
+              border: `1px solid ${colors.cyan}`, 
+              color: colors.cyan, 
+              fontSize: '14px', 
+              fontWeight: 700 
+            }}>
               PAGE {index + 1}
             </span>
-            <h3 className="text-2xl font-black text-white">
+            <h3 style={{ fontSize: '24px', fontWeight: 900, color: colors.white }}>
               {slide.type === 'title' ? slide.title : (slide as any).sessionTitle || slide.title}
             </h3>
           </div>
 
           {slide.type === 'title' && (
-            <div className="py-20 text-center space-y-6">
-              <p className="text-4xl font-black text-white">{slide.title}</p>
-              <p className="text-2xl text-cyan-neon">{slide.subtitle}</p>
+            <div style={{ padding: '80px 0', textAlign: 'center' }}>
+              <p style={{ fontSize: '36px', fontWeight: 900, color: colors.white, marginBottom: '24px', whiteSpace: 'pre-line' }}>{slide.title}</p>
+              <p style={{ fontSize: '24px', color: colors.cyan }}>{slide.subtitle}</p>
             </div>
           )}
 
           {slide.type === 'content' && slide.items?.map((item, i) => (
-            <div key={i} className="mb-10 p-8 bg-white/5 rounded-2xl border border-white/10">
-              <h4 className="text-xl font-bold text-cyan-neon mb-4">{item.title}</h4>
-              {item.desc && <p className="text-lg text-white/80 mb-4">{item.desc}</p>}
-              {item.highlight && <p className="text-lg font-black text-white mb-4 italic">"{item.highlight}"</p>}
+            <div key={i} style={{ 
+              marginBottom: '40px', 
+              padding: '32px', 
+              backgroundColor: colors.cardBg, 
+              borderRadius: '16px', 
+              border: `1px solid ${colors.border}` 
+            }}>
+              <h4 style={{ fontSize: '20px', fontWeight: 700, color: colors.cyan, marginBottom: '16px' }}>{item.title}</h4>
+              {item.desc && <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.8)', marginBottom: '16px' }}>{item.desc}</p>}
+              {item.highlight && <p style={{ fontSize: '18px', fontWeight: 900, color: colors.white, marginBottom: '16px', fontStyle: 'italic' }}>"{item.highlight}"</p>}
               {item.subItems && (
-                <ul className="grid grid-cols-1 gap-2">
+                <ul style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '8px', listStyle: 'none', padding: 0 }}>
                   {item.subItems.map((sub, j) => (
-                    <li key={j} className="text-base text-white/70 flex gap-2">
-                      <span className="text-cyan-neon">→</span> {sub}
+                    <li key={j} style={{ fontSize: '16px', color: 'rgba(255,255,255,0.7)', display: 'flex', gap: '8px' }}>
+                      <span style={{ color: colors.cyan }}>→</span> {sub}
                     </li>
                   ))}
                 </ul>
@@ -51,14 +86,19 @@ const PDFGenerator: React.FC<{ onComplete: (blob: Blob) => void; isGenerating: b
           ))}
 
           {slide.type === 'grid' && (
-            <div className="grid grid-cols-2 gap-6">
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
               {slide.cards?.map((card, i) => (
-                <div key={i} className="p-6 bg-white/5 rounded-2xl border border-white/10">
-                  <h4 className="text-lg font-bold text-cyan-neon mb-4">{card.title}</h4>
-                  <ul className="space-y-2">
+                <div key={i} style={{ 
+                  padding: '24px', 
+                  backgroundColor: colors.cardBg, 
+                  borderRadius: '16px', 
+                  border: `1px solid ${colors.border}` 
+                }}>
+                  <h4 style={{ fontSize: '18px', fontWeight: 700, color: colors.cyan, marginBottom: '16px' }}>{card.title}</h4>
+                  <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
                     {card.items?.map((item, j) => (
-                      <li key={j} className="text-sm text-white/70 flex gap-2">
-                        <span className="text-cyan-neon">▶</span> {item}
+                      <li key={j} style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', display: 'flex', gap: '8px' }}>
+                        <span style={{ color: colors.cyan }}>▶</span> {item}
                       </li>
                     ))}
                   </ul>
@@ -84,20 +124,24 @@ export const Day1DownloadButton: React.FC = () => {
       const container = document.getElementById('pdf-render-container');
       if (!container) throw new Error("Container not found");
 
-      const canvas = await html2canvas(container, {
-        scale: 2,
-        useCORS: true,
-        backgroundColor: '#0a0a0c',
+      // html-to-image is more robust with modern CSS (oklab/oklch)
+      const dataUrl = await htmlToImage.toPng(container, {
+        quality: 0.95,
+        backgroundColor: '#05080c',
+        pixelRatio: 2,
       });
 
-      const imgData = canvas.toDataURL('image/png');
       const pdf = new jsPDF({
         orientation: 'portrait',
         unit: 'px',
-        format: [canvas.width / 2, canvas.height / 2]
+        format: 'a4'
       });
 
-      pdf.addImage(imgData, 'PNG', 0, 0, canvas.width / 2, canvas.height / 2);
+      const imgProps = pdf.getImageProperties(dataUrl);
+      const pdfWidth = pdf.internal.pageSize.getWidth();
+      const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+      pdf.addImage(dataUrl, 'PNG', 0, 0, pdfWidth, pdfHeight);
       pdf.save('MICE_Master_Day1_Curriculum.pdf');
       
       setStatus('success');
