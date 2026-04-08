@@ -79,6 +79,7 @@ export interface SlideData {
   items?: any[];
   cards?: any[];
   mainQuote?: string;
+  useBoxedItems?: boolean;
 }
 
 export const day1Slides: SlideData[] = [
@@ -167,6 +168,7 @@ export const day1Slides: SlideData[] = [
     theme: "purple",
     session: "Track 02",
     sessionTitle: "공간의 미학: 베뉴 서베이 및 공간 기획",
+    useBoxedItems: false,
     cards: [
       {
         title: "접근성 (Accessibility)",
@@ -1033,10 +1035,10 @@ export const day3Slides: SlideData[] = [
     icon: React.createElement(Radio, { size: 80 }),
     title: "무전기 소통 프로토콜 (Radio Protocol)",
     content: (
-      React.createElement("div", { className: "text-left max-w-4xl mx-auto space-y-8" }, 
-        React.createElement("p", { className: "text-4xl font-black text-pink-neon" }, "1. 불필요한 사담 및 대화 절대 금지!"),
-        React.createElement("p", { className: "text-4xl font-bold text-white" }, "2. 호출 후 상대방의 \"카피 / 입도\" 확인 후 메시지 전달."),
-        React.createElement("p", { className: "text-4xl font-bold text-white" }, "3. 메시지 전달 종료 시 반드시 \"이상\" 명시.")
+      React.createElement("div", { className: "text-left max-w-max mx-auto space-y-8" }, 
+        React.createElement("p", { className: "text-4xl font-black text-pink-neon whitespace-nowrap tracking-tight" }, "1. 불필요한 사담 및 대화 절대 금지!"),
+        React.createElement("p", { className: "text-4xl font-bold text-white whitespace-nowrap tracking-tight" }, "2. 호출 후 상대방의 \"수신확인 / 연결상태\" 확인 후 메시지 전달."),
+        React.createElement("p", { className: "text-4xl font-bold text-white whitespace-nowrap tracking-tight" }, "3. 메시지 전달 종료 시 반드시 \"이상\" 명시.")
       )
     ),
   },
@@ -1112,7 +1114,7 @@ export const day3Slides: SlideData[] = [
       React.createElement("div", { className: "text-left max-w-4xl mx-auto space-y-6 text-3xl font-bold text-text-sub" }, 
         React.createElement("p", null, "1. 냉난방 적정 온도 ", React.createElement("span", { className: "text-green-neon font-black" }, "(22~24도)"), " 설정."),
         React.createElement("p", null, "2. 회의실 내 쓰레기통 비움 상태 점검."),
-        React.createElement("p", null, "3. 화장실 소모품 비치 여부 등 ", React.createElement("span", { className: "text-white font-black" }, "참가자 불만이 생길 수 있는 미세 품질 관리."))
+        React.createElement("p", { className: "whitespace-nowrap tracking-tight" }, "3. 화장실 소모품 비치 여부 등 ", React.createElement("span", { className: "text-white font-black" }, "참가자 불만이 생길 수 있는 상황을 미리 체크하고 사전에 차단."))
       )
     ),
   },

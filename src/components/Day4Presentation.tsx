@@ -172,10 +172,10 @@ export default function Day4Presentation({ onClose }: Day4PresentationProps) {
                         )}
                         
                         {item.subItems && (
-                          <ul className="grid grid-cols-1 md:grid-cols-2 gap-6 pl-2">
+                          <ul className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
                             {item.subItems.map((sub, j) => (
-                              <li key={j} className="text-xl text-white flex gap-4 leading-relaxed font-bold break-keep items-start">
-                                <span className={`mt-1.5 ${
+                              <li key={j} className="text-xl text-white flex gap-4 leading-relaxed font-bold break-keep items-start p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 transition-colors">
+                                <span className={`mt-1 ${
                                   slide.theme === 'green' ? 'text-green-neon' : 
                                   slide.theme === 'pink' ? 'text-pink-neon' : 
                                   slide.theme === 'cyan' ? 'text-cyan-neon' :
@@ -183,7 +183,7 @@ export default function Day4Presentation({ onClose }: Day4PresentationProps) {
                                   slide.theme === 'orange' ? 'text-orange-neon' :
                                   'text-purple-neon'
                                 }`}>→</span>
-                                {sub}
+                                <span>{sub}</span>
                               </li>
                             ))}
                           </ul>
@@ -237,10 +237,10 @@ export default function Day4Presentation({ onClose }: Day4PresentationProps) {
                         <div className="scale-110 origin-left">{card.icon}</div>
                         {card.title}
                       </div>
-                      <ul className="space-y-6 flex-grow">
+                      <ul className="space-y-4 flex-grow">
                         {card.items?.map((item, j) => (
-                          <li key={j} className="text-xl text-white flex gap-4 leading-relaxed font-bold break-keep items-start">
-                            <span className={`mt-1.5 ${
+                          <li key={j} className="text-xl text-white flex gap-4 leading-relaxed font-bold break-keep items-start p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 transition-colors">
+                            <span className={`mt-1 ${
                               slide.theme === 'green' ? 'text-green-neon' : 
                               slide.theme === 'pink' ? 'text-pink-neon' : 
                               slide.theme === 'cyan' ? 'text-cyan-neon' :
@@ -248,7 +248,7 @@ export default function Day4Presentation({ onClose }: Day4PresentationProps) {
                               slide.theme === 'orange' ? 'text-orange-neon' :
                               'text-purple-neon'
                             }`}>▶</span>
-                            {item}
+                            <span>{item}</span>
                           </li>
                         ))}
                       </ul>
