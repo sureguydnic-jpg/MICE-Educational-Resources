@@ -15,7 +15,6 @@ import Day3Presentation from "./components/Day3Presentation";
 import Day4Presentation from "./components/Day4Presentation";
 import LaborLawPresentation from "./components/LaborLawPresentation";
 import CopyrightModal from "./components/CopyrightModal";
-import { Day1DownloadButton } from "./components/Day1DownloadButton";
 
 interface NavItemProps {
   day: string;
@@ -29,14 +28,22 @@ interface NavItemProps {
 
 const NavItem: React.FC<NavItemProps> = ({ day, title, subtitle, color, icon, delay, onClick }) => {
   return (
-    <motion.button
+    <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay, duration: 0.5 }}
       whileHover={{ scale: 1.02, x: 5 }}
       whileTap={{ scale: 0.98 }}
       onClick={onClick}
-      className="group relative flex items-center gap-6 p-6 glass-card rounded-2xl text-left transition-all hover:border-cyan-neon/50 w-full"
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          onClick?.();
+        }
+      }}
+      className="group relative flex items-center gap-6 p-6 glass-card rounded-2xl text-left transition-all hover:border-cyan-neon/50 w-full cursor-pointer"
     >
       <div 
         className="flex items-center justify-center w-16 h-16 rounded-xl shrink-0 transition-all group-hover:scale-110"
@@ -52,7 +59,6 @@ const NavItem: React.FC<NavItemProps> = ({ day, title, subtitle, color, icon, de
           <span className="font-display text-xs tracking-widest uppercase opacity-60" style={{ color: color }}>
             {day}
           </span>
-          {day === "Day 01" && <Day1DownloadButton />}
         </div>
         <h3 className="text-xl font-bold text-white group-hover:text-cyan-neon transition-colors">
           {title}
@@ -63,7 +69,7 @@ const NavItem: React.FC<NavItemProps> = ({ day, title, subtitle, color, icon, de
       </div>
 
       <ChevronRight className="w-5 h-5 text-white/20 group-hover:text-cyan-neon transition-colors" />
-    </motion.button>
+    </motion.div>
   );
 };
 
