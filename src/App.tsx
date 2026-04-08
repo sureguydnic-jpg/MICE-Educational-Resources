@@ -6,13 +6,15 @@ import {
   ShieldCheck, 
   CheckCircle2, 
   Scale,
-  ChevronRight
+  ChevronRight,
+  AlertTriangle
 } from "lucide-react";
 import Day1Presentation from "./components/Day1Presentation";
 import Day2Presentation from "./components/Day2Presentation";
 import Day3Presentation from "./components/Day3Presentation";
 import Day4Presentation from "./components/Day4Presentation";
 import LaborLawPresentation from "./components/LaborLawPresentation";
+import CopyrightModal from "./components/CopyrightModal";
 
 interface NavItemProps {
   day: string;
@@ -63,6 +65,7 @@ const NavItem: React.FC<NavItemProps> = ({ day, title, subtitle, color, icon, de
 
 export default function App() {
   const [activeView, setActiveView] = useState<string | null>(null);
+  const [isCopyrightOpen, setIsCopyrightOpen] = useState(false);
 
   const menuItems = [
     {
@@ -188,10 +191,32 @@ export default function App() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2 }}
-        className="absolute bottom-8 text-white/20 font-display text-xs tracking-widest"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/20 font-display text-xs tracking-widest"
       >
         © 2026 MICE AI TRAINING CENTER. ALL RIGHTS RESERVED.
       </motion.footer>
+
+      {/* Copyright Floating Button */}
+      <motion.button
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 1.5 }}
+        whileHover={{ scale: 1.1, rotate: 10 }}
+        whileTap={{ scale: 0.9 }}
+        onClick={() => setIsCopyrightOpen(true)}
+        className="fixed bottom-8 right-8 z-50 w-14 h-14 bg-bg-base/80 backdrop-blur-md border border-white/10 rounded-full flex items-center justify-center text-yellow-neon shadow-2xl hover:border-yellow-neon/50 transition-all group"
+      >
+        <AlertTriangle size={28} className="group-hover:animate-pulse" />
+        <span className="absolute bottom-full right-0 mb-4 px-4 py-2 bg-bg-base border border-white/10 rounded-xl text-xs font-bold text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+          수강 가이드 및 저작권 안내
+        </span>
+      </motion.button>
+
+      {/* Copyright Modal */}
+      <CopyrightModal 
+        isOpen={isCopyrightOpen} 
+        onClose={() => setIsCopyrightOpen(false)} 
+      />
 
       {/* Presentation Overlay */}
       <AnimatePresence>
