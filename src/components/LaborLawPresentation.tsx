@@ -262,16 +262,16 @@ export default function LaborLawPresentation({ onClose }: LaborLawPresentationPr
       <button 
         onClick={prevSlide}
         disabled={currentSlide === 0}
-        className="absolute left-8 top-1/2 -translate-y-1/2 z-[100] p-4 rounded-full border border-cyan-neon/30 text-cyan-neon hover:bg-cyan-neon hover:text-bg-base transition-all disabled:opacity-20 disabled:cursor-not-allowed"
+        className="absolute left-8 top-1/2 -translate-y-1/2 z-[100] p-2 text-cyan-neon hover:scale-125 transition-all disabled:opacity-20 disabled:cursor-not-allowed"
       >
-        <ChevronLeft size={32} />
+        <ChevronLeft size={48} />
       </button>
       <button 
         onClick={nextSlide}
         disabled={currentSlide === slides.length - 1}
-        className="absolute right-8 top-1/2 -translate-y-1/2 z-[100] p-4 rounded-full border border-cyan-neon/30 text-cyan-neon hover:bg-cyan-neon hover:text-bg-base transition-all disabled:opacity-20 disabled:cursor-not-allowed"
+        className="absolute right-8 top-1/2 -translate-y-1/2 z-[100] p-2 text-cyan-neon hover:scale-125 transition-all disabled:opacity-20 disabled:cursor-not-allowed"
       >
-        <ChevronRight size={32} />
+        <ChevronRight size={48} />
       </button>
 
       <div className="relative z-10 w-full max-w-[95vw] h-[90vh] flex flex-col items-center justify-start pt-8">
@@ -301,54 +301,60 @@ export default function LaborLawPresentation({ onClose }: LaborLawPresentationPr
             )}
 
             {slide.type === "goal" && (
-              <div className="flex flex-col items-center">
-                <div className="glass-card p-20 rounded-3xl border-cyan-neon/30 max-w-[85vw] w-full flex flex-col items-center">
-                  <div className="text-cyan-neon mb-12">
+              <div className="flex flex-col items-center w-full max-w-[85vw] mx-auto">
+                <div className="flex items-center gap-4 mb-12 self-start opacity-60">
+                  <div className="text-cyan-neon scale-50 origin-left">
                     {slide.icon}
                   </div>
-                  <h2 className="text-5xl font-black text-cyan-neon mb-16 font-display uppercase tracking-widest text-center">
+                  <h2 className="text-2xl font-black text-cyan-neon font-display uppercase tracking-widest">
                     {slide.title}
                   </h2>
-                  {slide.content}
+                </div>
+                <div className="glass-card px-24 py-20 rounded-4xl border-cyan-neon/20 w-full flex flex-col items-center shadow-2xl">
+                  <div className="w-full">
+                    {slide.content}
+                  </div>
                 </div>
               </div>
             )}
 
             {slide.type === "content" && (
               <div className="flex flex-col h-full w-full max-w-[90vw] mx-auto overflow-hidden">
-                <div className="flex items-center gap-6 mb-8 border-b-4 border-white/10 pb-6">
-                  <span className="px-8 py-2 rounded-full border-4 font-black text-3xl border-cyan-neon text-cyan-neon bg-cyan-neon/10">
+                <div className="flex items-center gap-4 mb-10">
+                  <span className="px-6 py-1.5 rounded-full border-2 font-black text-xl shadow-lg border-cyan-neon text-cyan-neon bg-cyan-neon/10">
                     {slide.session}
                   </span>
-                  <h2 className="text-5xl font-display text-white font-black tracking-tight">
+                  <h2 className="text-3xl font-display text-white font-black tracking-widest uppercase">
                     {slide.sessionTitle}
                   </h2>
+                  <div className="h-px flex-grow bg-white/20 ml-4" />
+                  <span className="px-4 py-1 rounded-full bg-white/10 border border-white/20 text-xs font-black text-white tracking-widest">
+                    LABOR LAW GUIDE
+                  </span>
                 </div>
                 
-                <div className="glass-card p-12 rounded-4xl flex-grow flex flex-col justify-start pt-12 shadow-2xl overflow-hidden">
-                  <div className="flex items-center gap-5 text-4xl font-black mb-8 pb-6 border-b-4 border-dashed text-cyan-neon border-cyan-neon/30">
-                    {slide.cardIcon}
-                    {slide.cardTitle}
-                  </div>
-                  
-                  <div className="space-y-8">
+                <div className="flex-grow overflow-y-auto pr-4 custom-scrollbar">
+                  <div className="grid grid-cols-1 gap-8 pb-12">
                     {slide.items?.map((item, i) => (
-                      <div key={i} className="space-y-6">
-                        <h3 className="text-4xl font-black text-white flex items-center gap-5">
-                          <div className="w-3 h-10 rounded-full bg-cyan-neon" />
+                      <div key={i} className="glass-card p-12 rounded-4xl border-white/10 shadow-2xl space-y-6 hover:border-white/30 transition-all">
+                        <div className="flex items-center gap-5 text-4xl font-black pb-6 border-b-2 border-dashed text-cyan-neon border-cyan-neon/20">
+                          {slide.cardIcon || <div className="w-3 h-10 rounded-full bg-cyan-neon" />}
                           {item.title}
-                        </h3>
-                        {item.desc && <p className="text-3xl text-text-sub leading-relaxed pl-12 font-bold break-keep">{item.desc}</p>}
+                        </div>
+                        
+                        {item.desc && <p className="text-2xl text-white leading-relaxed font-medium break-keep pl-2">{item.desc}</p>}
+                        
                         {item.highlight && (
-                          <div className="p-10 rounded-r-3xl border-l-[12px] bg-white/5 border-cyan-neon">
-                            <p className="text-3xl text-white leading-relaxed font-black break-keep">{item.highlight}</p>
+                          <div className="p-10 rounded-2xl bg-white/5 border-l-[12px] border-cyan-neon">
+                            <p className="text-2xl text-white leading-relaxed font-black break-keep">{item.highlight}</p>
                           </div>
                         )}
+                        
                         {item.subItems && (
-                          <ul className="space-y-4 pl-16">
+                          <ul className="grid grid-cols-1 md:grid-cols-2 gap-6 pl-2">
                             {item.subItems.map((sub, j) => (
-                              <li key={j} className="text-2xl text-text-sub flex gap-5 font-bold break-keep">
-                                <span className="text-cyan-neon">→</span>
+                              <li key={j} className="text-xl text-white flex gap-4 leading-relaxed font-bold break-keep items-start">
+                                <span className="mt-1.5 text-cyan-neon">→</span>
                                 {sub}
                               </li>
                             ))}
@@ -363,26 +369,30 @@ export default function LaborLawPresentation({ onClose }: LaborLawPresentationPr
 
             {slide.type === "grid" && (
               <div className="flex flex-col h-full w-full max-w-[92vw] mx-auto overflow-hidden">
-                <div className="flex items-center gap-6 mb-8 border-b-4 border-white/10 pb-6">
-                  <span className="px-8 py-2 rounded-full border-4 font-black text-3xl border-cyan-neon text-cyan-neon bg-cyan-neon/10">
+                <div className="flex items-center gap-4 mb-10">
+                  <span className="px-6 py-1.5 rounded-full border-2 font-black text-xl shadow-lg border-cyan-neon text-cyan-neon bg-cyan-neon/10">
                     {slide.session}
                   </span>
-                  <h2 className="text-5xl font-display text-white font-black tracking-tight">
+                  <h2 className="text-3xl font-display text-white font-black tracking-widest uppercase">
                     {slide.sessionTitle}
                   </h2>
+                  <div className="h-px flex-grow bg-white/20 ml-4" />
+                  <span className="px-4 py-1 rounded-full bg-white/10 border border-white/20 text-xs font-black text-white tracking-widest">
+                    OVERVIEW
+                  </span>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 flex-grow overflow-hidden">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-10 flex-grow overflow-y-auto pr-4 custom-scrollbar pb-12">
                   {slide.cards?.map((card, i) => (
-                    <div key={i} className="glass-card p-10 rounded-4xl flex flex-col justify-start pt-12 shadow-2xl overflow-hidden">
-                      <div className="flex items-center gap-5 text-3xl font-black mb-6 pb-4 border-b-4 border-dashed text-cyan-neon border-cyan-neon/30">
-                        {card.icon}
+                    <div key={i} className="glass-card p-12 rounded-4xl flex flex-col justify-start shadow-2xl hover:border-white/30 transition-all">
+                      <div className="flex items-center gap-5 text-3xl font-black mb-8 pb-6 border-b-2 border-dashed text-cyan-neon border-cyan-neon/20">
+                        <div className="scale-110 origin-left">{card.icon}</div>
                         {card.title}
                       </div>
                       <ul className="space-y-6 flex-grow">
                         {card.items?.map((item, j) => (
-                          <li key={j} className="text-2xl text-text-sub flex gap-5 leading-relaxed font-bold break-keep">
-                            <span className="text-cyan-neon">▶</span>
+                          <li key={j} className="text-xl text-white flex gap-4 leading-relaxed font-bold break-keep items-start">
+                            <span className="mt-1.5 text-cyan-neon">▶</span>
                             {item}
                           </li>
                         ))}

@@ -55,16 +55,16 @@ export default function Day3Presentation({ onClose }: Day3PresentationProps) {
       <button 
         onClick={prevSlide}
         disabled={currentSlide === 0}
-        className="absolute left-8 top-1/2 -translate-y-1/2 z-[100] p-4 rounded-full border border-green-neon/30 text-green-neon hover:bg-green-neon hover:text-bg-base transition-all disabled:opacity-20 disabled:cursor-not-allowed"
+        className="absolute left-8 top-1/2 -translate-y-1/2 z-[100] p-2 text-green-neon hover:scale-125 transition-all disabled:opacity-20 disabled:cursor-not-allowed"
       >
-        <ChevronLeft size={32} />
+        <ChevronLeft size={48} />
       </button>
       <button 
         onClick={nextSlide}
         disabled={currentSlide === slides.length - 1}
-        className="absolute right-8 top-1/2 -translate-y-1/2 z-[100] p-4 rounded-full border border-green-neon/30 text-green-neon hover:bg-green-neon hover:text-bg-base transition-all disabled:opacity-20 disabled:cursor-not-allowed"
+        className="absolute right-8 top-1/2 -translate-y-1/2 z-[100] p-2 text-green-neon hover:scale-125 transition-all disabled:opacity-20 disabled:cursor-not-allowed"
       >
-        <ChevronRight size={32} />
+        <ChevronRight size={48} />
       </button>
 
       <div className="relative z-10 w-full max-w-[95vw] h-[90vh] flex flex-col items-center justify-start pt-8">
@@ -94,23 +94,27 @@ export default function Day3Presentation({ onClose }: Day3PresentationProps) {
             )}
 
             {slide.type === "goal" && (
-              <div className="flex flex-col items-center">
-                <div className="glass-card p-20 rounded-3xl border-green-neon/30 max-w-[85vw] w-full flex flex-col items-center">
-                  <div className="text-green-neon mb-12">
+              <div className="flex flex-col items-center w-full max-w-[85vw] mx-auto">
+                <div className="flex items-center gap-4 mb-12 self-start opacity-60">
+                  <div className="text-green-neon scale-50 origin-left">
                     {slide.icon}
                   </div>
-                  <h2 className="text-5xl font-black text-green-neon mb-16 font-display uppercase tracking-widest">
+                  <h2 className="text-2xl font-black text-green-neon font-display uppercase tracking-widest">
                     {slide.title}
                   </h2>
-                  {slide.content}
+                </div>
+                <div className="glass-card px-24 py-20 rounded-4xl border-green-neon/20 w-full flex flex-col items-center shadow-2xl">
+                  <div className="w-full">
+                    {slide.content}
+                  </div>
                 </div>
               </div>
             )}
 
             {slide.type === "content" && (
               <div className="flex flex-col h-full w-full max-w-[90vw] mx-auto overflow-hidden">
-                <div className="flex items-center gap-6 mb-8 border-b-4 border-white/10 pb-6">
-                  <span className={`px-8 py-2 rounded-full border-4 font-black text-3xl ${
+                <div className="flex items-center gap-4 mb-10">
+                  <span className={`px-6 py-1.5 rounded-full border-2 font-black text-xl shadow-lg ${
                     slide.theme === 'green' ? 'border-green-neon text-green-neon bg-green-neon/10' : 
                     slide.theme === 'pink' ? 'border-pink-neon text-pink-neon bg-pink-neon/10' : 
                     slide.theme === 'cyan' ? 'border-cyan-neon text-cyan-neon bg-cyan-neon/10' :
@@ -119,59 +123,61 @@ export default function Day3Presentation({ onClose }: Day3PresentationProps) {
                   }`}>
                     {slide.session}
                   </span>
-                  <h2 className="text-5xl font-display text-white font-black tracking-tight">
+                  <h2 className="text-3xl font-display text-white font-black tracking-widest uppercase">
                     {slide.sessionTitle}
                   </h2>
+                  <div className="h-px flex-grow bg-white/20 ml-4" />
+                  <span className="px-4 py-1 rounded-full bg-white/10 border border-white/20 text-xs font-black text-white tracking-widest">
+                    SESSION ACTIVE
+                  </span>
                 </div>
                 
-                <div className="glass-card p-12 rounded-4xl flex-grow flex flex-col justify-start pt-12 shadow-2xl overflow-hidden">
-                  <div className={`flex items-center gap-5 text-4xl font-black mb-8 pb-6 border-b-4 border-dashed ${
-                    slide.theme === 'green' ? 'text-green-neon border-green-neon/30' : 
-                    slide.theme === 'pink' ? 'text-pink-neon border-pink-neon/30' : 
-                    slide.theme === 'cyan' ? 'text-cyan-neon border-cyan-neon/30' :
-                    slide.theme === 'yellow' ? 'text-yellow-neon border-yellow-neon/30' :
-                    'text-purple-neon border-purple-neon/30'
-                  }`}>
-                    {slide.cardIcon}
-                    {slide.cardTitle}
-                  </div>
-                  
-                  <div className="space-y-8">
+                <div className="flex-grow overflow-y-auto pr-4 custom-scrollbar">
+                  <div className="grid grid-cols-1 gap-8 pb-12">
                     {slide.items?.map((item, i) => (
-                      <div key={i} className="space-y-6">
-                        <h3 className="text-4xl font-black text-white flex items-center gap-5">
-                          <div className={`w-3 h-10 rounded-full ${
+                      <div key={i} className="glass-card p-12 rounded-4xl border-white/10 shadow-2xl space-y-6 hover:border-white/30 transition-all">
+                        <div className={`flex items-center gap-5 text-4xl font-black pb-6 border-b-2 border-dashed ${
+                          slide.theme === 'green' ? 'text-green-neon border-green-neon/20' : 
+                          slide.theme === 'pink' ? 'text-pink-neon border-pink-neon/20' : 
+                          slide.theme === 'cyan' ? 'text-cyan-neon border-cyan-neon/20' :
+                          slide.theme === 'yellow' ? 'text-yellow-neon border-yellow-neon/20' :
+                          'text-purple-neon border-purple-neon/20'
+                        }`}>
+                          {slide.cardIcon || <div className={`w-3 h-10 rounded-full ${
                             slide.theme === 'green' ? 'bg-green-neon' : 
                             slide.theme === 'pink' ? 'bg-pink-neon' : 
                             slide.theme === 'cyan' ? 'bg-cyan-neon' :
                             slide.theme === 'yellow' ? 'bg-yellow-neon' :
                             'bg-purple-neon'
-                          }`} />
+                          }`} />}
                           {item.title}
-                        </h3>
-                        {item.desc && <p className="text-3xl text-text-sub leading-relaxed pl-12 font-bold break-keep">{item.desc}</p>}
+                        </div>
+                        
+                        {item.desc && <p className="text-2xl text-white leading-relaxed font-medium break-keep pl-2">{item.desc}</p>}
+                        
                         {item.highlight && (
-                          <div className={`p-10 rounded-r-3xl border-l-[12px] bg-white/5 ${
+                          <div className={`p-10 rounded-2xl bg-white/5 border-l-[12px] ${
                             slide.theme === 'green' ? 'border-green-neon' : 
                             slide.theme === 'pink' ? 'border-pink-neon' : 
                             slide.theme === 'cyan' ? 'border-cyan-neon' :
                             slide.theme === 'yellow' ? 'border-yellow-neon' :
                             'border-purple-neon'
                           }`}>
-                            <p className="text-3xl text-white leading-relaxed font-black break-keep">{item.highlight}</p>
+                            <p className="text-2xl text-white leading-relaxed font-black break-keep">{item.highlight}</p>
                           </div>
                         )}
+                        
                         {item.subItems && (
-                          <ul className="space-y-4 pl-16">
+                          <ul className="grid grid-cols-1 md:grid-cols-2 gap-6 pl-2">
                             {item.subItems.map((sub, j) => (
-                              <li key={j} className="text-2xl text-text-sub flex gap-5 font-bold break-keep">
-                                <span className={
+                              <li key={j} className="text-xl text-white flex gap-4 leading-relaxed font-bold break-keep items-start">
+                                <span className={`mt-1.5 ${
                                   slide.theme === 'green' ? 'text-green-neon' : 
                                   slide.theme === 'pink' ? 'text-pink-neon' : 
                                   slide.theme === 'cyan' ? 'text-cyan-neon' :
                                   slide.theme === 'yellow' ? 'text-yellow-neon' :
                                   'text-purple-neon'
-                                }>→</span>
+                                }`}>→</span>
                                 {sub}
                               </li>
                             ))}
@@ -186,8 +192,8 @@ export default function Day3Presentation({ onClose }: Day3PresentationProps) {
 
             {slide.type === "grid" && (
               <div className="flex flex-col h-full w-full max-w-[92vw] mx-auto overflow-hidden">
-                <div className="flex items-center gap-6 mb-8 border-b-4 border-white/10 pb-6">
-                  <span className={`px-8 py-2 rounded-full border-4 font-black text-3xl ${
+                <div className="flex items-center gap-4 mb-10">
+                  <span className={`px-6 py-1.5 rounded-full border-2 font-black text-xl shadow-lg ${
                     slide.theme === 'green' ? 'border-green-neon text-green-neon bg-green-neon/10' : 
                     slide.theme === 'pink' ? 'border-pink-neon text-pink-neon bg-pink-neon/10' : 
                     slide.theme === 'cyan' ? 'border-cyan-neon text-cyan-neon bg-cyan-neon/10' :
@@ -196,34 +202,44 @@ export default function Day3Presentation({ onClose }: Day3PresentationProps) {
                   }`}>
                     {slide.session}
                   </span>
-                  <h2 className="text-5xl font-display text-white font-black tracking-tight">
+                  <h2 className="text-3xl font-display text-white font-black tracking-widest uppercase">
                     {slide.sessionTitle}
                   </h2>
+                  <div className="h-px flex-grow bg-white/20 ml-4" />
+                  <span className="px-4 py-1 rounded-full bg-white/10 border border-white/20 text-xs font-black text-white tracking-widest">
+                    OVERVIEW
+                  </span>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 flex-grow overflow-hidden">
+                <div className={`grid grid-cols-1 ${
+                  slide.cards?.length === 3 ? 'md:grid-cols-3 gap-6' : 'md:grid-cols-2 gap-10'
+                } flex-grow overflow-y-auto pr-4 custom-scrollbar pb-12`}>
                   {slide.cards?.map((card, i) => (
-                    <div key={i} className="glass-card p-10 rounded-4xl flex flex-col justify-start pt-12 shadow-2xl overflow-hidden">
-                      <div className={`flex items-center gap-5 text-3xl font-black mb-6 pb-4 border-b-4 border-dashed ${
-                        slide.theme === 'green' ? 'text-green-neon border-green-neon/30' : 
-                        slide.theme === 'pink' ? 'text-pink-neon border-pink-neon/30' : 
-                        slide.theme === 'cyan' ? 'text-cyan-neon border-cyan-neon/30' :
-                        slide.theme === 'yellow' ? 'text-yellow-neon border-yellow-neon/30' :
-                        'text-purple-neon border-purple-neon/30'
+                    <div key={i} className={`glass-card ${
+                      slide.cards?.length === 3 ? 'p-8' : 'p-12'
+                    } rounded-4xl flex flex-col justify-start shadow-2xl hover:border-white/30 transition-all`}>
+                      <div className={`flex items-center gap-5 ${
+                        slide.cards?.length === 3 ? 'text-2xl mb-6 pb-4' : 'text-3xl mb-8 pb-6'
+                      } font-black border-b-2 border-dashed ${
+                        slide.theme === 'green' ? 'text-green-neon border-green-neon/20' : 
+                        slide.theme === 'pink' ? 'text-pink-neon border-pink-neon/20' : 
+                        slide.theme === 'cyan' ? 'text-cyan-neon border-cyan-neon/20' :
+                        slide.theme === 'yellow' ? 'text-yellow-neon border-yellow-neon/20' :
+                        'text-purple-neon border-purple-neon/20'
                       }`}>
-                        {card.icon}
+                        <div className="scale-110 origin-left">{card.icon}</div>
                         {card.title}
                       </div>
                       <ul className="space-y-6 flex-grow">
                         {card.items?.map((item, j) => (
-                          <li key={j} className="text-2xl text-text-sub flex gap-5 leading-relaxed font-bold break-keep">
-                            <span className={
+                          <li key={j} className="text-xl text-white flex gap-4 leading-relaxed font-bold break-keep items-start">
+                            <span className={`mt-1.5 ${
                               slide.theme === 'green' ? 'text-green-neon' : 
                               slide.theme === 'pink' ? 'text-pink-neon' : 
                               slide.theme === 'cyan' ? 'text-cyan-neon' :
                               slide.theme === 'yellow' ? 'text-yellow-neon' :
                               'text-purple-neon'
-                            }>▶</span>
+                            }`}>▶</span>
                             {item}
                           </li>
                         ))}
@@ -235,8 +251,8 @@ export default function Day3Presentation({ onClose }: Day3PresentationProps) {
             )}
 
             {slide.type === "summary" && (
-              <div className="flex flex-col items-center justify-start h-full">
-                <div className="glass-card p-12 rounded-4xl border-green-neon/30 max-w-[85vw] w-full flex flex-col items-center bg-black/80 mt-12">
+              <div className="flex flex-col items-center justify-center h-full">
+                <div className="glass-card p-12 rounded-4xl border-green-neon/30 max-w-[85vw] w-full flex flex-col items-center bg-black/80">
                   <div className="text-green-neon mb-6 drop-shadow-[0_0_30px_rgba(0, 255, 157, 0.5)]">
                     {slide.icon}
                   </div>

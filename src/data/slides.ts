@@ -50,7 +50,18 @@ import {
   History,
   FileSearch,
   MessageSquare,
-  HeartHandshake
+  HeartHandshake,
+  UserCheck,
+  Info,
+  Briefcase,
+  Settings,
+  UserMinus,
+  Link,
+  Monitor,
+  Volume2,
+  Sun,
+  Eye,
+  Smile
 } from "lucide-react";
 
 export interface SlideData {
@@ -152,21 +163,45 @@ export const day1Slides: SlideData[] = [
   },
   // Slide 6: [2교시] 1. 베뉴 서베이
   {
-    type: "content",
+    type: "grid",
     theme: "purple",
     session: "[2교시]",
     sessionTitle: "공간의 미학: 베뉴 서베이 및 공간 기획",
-    cardTitle: "1. 베뉴 서베이 (Venue Survey) 및 선정 기준",
-    cardIcon: React.createElement(Search, { size: 32 }),
-    items: [
+    cards: [
       {
-        title: "베뉴 선정의 5가지 핵심 지표",
-        subItems: [
-          "접근성 (Accessibility): 대중교통, 주차, 공항과의 거리.",
-          "수용 능력 (Capacity): 회의실 규모, 층고, 기둥 유무.",
-          "인프라 (Infrastructure): AV 장비, 인터넷 속도, 냉난방 시스템.",
-          "서비스 (Service): 식음료(F&B) 품질, 운영 지원 인력.",
-          "비용 (Cost): 대관료 및 부대시설 이용료의 적정성."
+        title: "접근성 (Accessibility)",
+        icon: React.createElement(Route, { size: 32 }),
+        items: [
+          "대중교통(지하철, 버스) 연계성",
+          "주차 공간 확보 및 진입로 편의성",
+          "공항 및 주요 터미널과의 거리"
+        ]
+      },
+      {
+        title: "수용 능력 (Capacity)",
+        icon: React.createElement(Users, { size: 32 }),
+        items: [
+          "회의실 규모 및 분과 회의실 개수",
+          "적정 층고 확보 및 기둥 유무",
+          "로비 및 공용 공간의 여유도"
+        ]
+      },
+      {
+        title: "인프라 (Infrastructure)",
+        icon: React.createElement(Zap, { size: 32 }),
+        items: [
+          "최신 AV 장비 및 음향 시스템",
+          "안정적인 인터넷 및 Wi-Fi 속도",
+          "냉난방 및 환기 시스템 상태"
+        ]
+      },
+      {
+        title: "서비스 & 비용 (Service/Cost)",
+        icon: React.createElement(Star, { size: 32 }),
+        items: [
+          "식음료(F&B) 품질 및 메뉴 다양성",
+          "운영 지원 인력의 숙련도",
+          "대관료 및 부대시설 이용료 적정성"
         ]
       }
     ]
@@ -192,39 +227,63 @@ export const day1Slides: SlideData[] = [
   },
   // Slide 8: [2교시] 3. 베뉴 계약
   {
-    type: "content",
+    type: "grid",
     theme: "purple",
     session: "[2교시]",
     sessionTitle: "공간의 미학: 베뉴 서베이 및 공간 기획",
-    cardTitle: "3. 베뉴 계약 및 협상 기술",
-    cardIcon: React.createElement(FileText, { size: 32 }),
-    items: [
+    cards: [
       {
-        title: "계약 시 주의 사항",
-        subItems: [
-          "취소 규정 (Cancellation Policy) 및 위약금 확인.",
-          "반입/반출 시간(Load-in/out) 및 추가 비용 협의.",
-          "독점 업체(Exclusive Vendor) 유무 확인 (전기, 장비 등)."
+        title: "취소 및 위약금 규정",
+        icon: React.createElement(AlertTriangle, { size: 32 }),
+        items: [
+          "단계별 취소 수수료(Cancellation Fee) 확인",
+          "천재지변 등 불가항력 조항(Force Majeure) 검토",
+          "환불 프로세스 및 증빙 서류 요건 확인"
+        ]
+      },
+      {
+        title: "반입/반출 및 시간 협의",
+        icon: React.createElement(Timer, { size: 32 }),
+        items: [
+          "무료 설치/철거 시간(Load-in/out) 확보",
+          "야간 및 주말 작업 시 추가 비용 확인",
+          "화물 엘리베이터 및 하역장 이용 규정"
+        ]
+      },
+      {
+        title: "독점 업체 및 부대시설",
+        icon: React.createElement(ShieldCheck, { size: 32 }),
+        items: [
+          "베뉴 지정 독점 업체(전기, 장비 등) 확인",
+          "외부 업체 반입 시 반입료(Royalty) 유무",
+          "창고, VIP 대기실, 사무국 공간 제공 범위"
         ]
       }
     ]
   },
   // Slide 9: [3교시] 1. 조직도 구성
   {
-    type: "content",
+    type: "grid",
     theme: "pink",
     session: "[3교시]",
     sessionTitle: "조직의 힘: 추진 조직 구성 및 R&R 설정",
-    cardTitle: "1. 추진 조직도 (Organizing Committee) 설계",
-    cardIcon: React.createElement(Users, { size: 32 }),
-    items: [
+    cards: [
       {
-        title: "기능별 조직 구성",
-        subItems: [
-          "사무국: 전체 총괄 및 행정 지원.",
-          "운영팀: 현장 운영, 등록, 의전 담당.",
-          "홍보팀: 온/오프라인 마케팅 및 미디어 대응.",
-          "학술/전시팀: 프로그램 기획 및 연사 관리."
+        title: "사무국 & 운영팀",
+        icon: React.createElement(Users, { size: 32 }),
+        items: [
+          "사무국: 전체 행정, 예산, 대관 총괄",
+          "운영팀: 현장 등록, 의전, 물류 관리",
+          "스태프 교육 및 배치 계획 수립"
+        ]
+      },
+      {
+        title: "홍보 & 학술/전시팀",
+        icon: React.createElement(Megaphone, { size: 32 }),
+        items: [
+          "홍보팀: 마케팅, 미디어, 온/오프라인 홍보",
+          "학술팀: 연사 관리, 프로그램 기획",
+          "전시팀: 부스 유치 및 참가업체 관리"
         ]
       }
     ]
@@ -250,19 +309,36 @@ export const day1Slides: SlideData[] = [
   },
   // Slide 11: [3교시] 3. 외부 파트너십
   {
-    type: "content",
+    type: "grid",
     theme: "pink",
     session: "[3교시]",
     sessionTitle: "조직의 힘: 추진 조직 구성 및 R&R 설정",
-    cardTitle: "3. 외부 파트너사 및 협력업체 관리",
-    cardIcon: React.createElement(Network, { size: 32 }),
-    items: [
+    cards: [
       {
-        title: "파트너사 선정 기준",
-        subItems: [
-          "유사 행사 수행 실적 및 포트폴리오 검토.",
-          "현장 대응 능력 및 커뮤니케이션 유연성.",
-          "제시 견적의 투명성 및 합리성."
+        title: "수행 실적 및 포트폴리오",
+        icon: React.createElement(ClipboardList, { size: 32 }),
+        items: [
+          "유사 규모 및 성격의 행사 수행 경험",
+          "주요 클라이언트 레퍼런스 체크",
+          "디자인 및 기술력의 완성도 검토"
+        ]
+      },
+      {
+        title: "대응 능력 및 유연성",
+        icon: React.createElement(Zap, { size: 32 }),
+        items: [
+          "현장 돌발 상황에 대한 위기 관리 능력",
+          "원활한 커뮤니케이션 및 피드백 속도",
+          "전담 인력의 숙련도 및 책임감"
+        ]
+      },
+      {
+        title: "견적 투명성 및 합리성",
+        icon: React.createElement(BarChart3, { size: 32 }),
+        items: [
+          "세부 항목별 단가 산출의 근거 명확성",
+          "예산 범위 내 최적의 솔루션 제안",
+          "추가 비용 발생 가능성에 대한 사전 고지"
         ]
       }
     ]
@@ -380,38 +456,44 @@ export const day2Slides: SlideData[] = [
   },
   // Slide 4: [5교시] 1. 세부 실행계획서 (2)
   {
-    type: "content",
+    type: "grid",
     theme: "cyan",
     session: "[5교시]",
     sessionTitle: "운영의 표준: 상세 실행계획 및 파트별 운영 절차",
-    cardTitle: "1. 표준 운영 절차 (SOP: Standard Operating Procedure) 수립",
-    cardIcon: React.createElement(ListChecks, { size: 32 }),
-    items: [
+    cards: [
       {
-        title: "운영 파트별 핵심 프로세스",
-        subItems: [
-          "등록 파트: 사전 등록자 확인 → 명찰 교부 → 기념품 증정 → 입동 안내 (Target: 30초 이내).",
-          "안내/민원 파트: 자주 묻는 질문(FAQ) 리스트 작성, 주차권 배부 및 전시장 길 안내 표준 멘트 설정.",
-          "사무국 운영: 소모품 재고 관리, 분실물 처리 대장 작성, 현장 긴급 지출 증빙 관리 프로세스 구축."
-        ]
+        title: "등록 파트",
+        icon: React.createElement(UserCheck, { size: 32 }),
+        items: ["사전 등록자 확인", "명찰 교부 및 기념품 증정", "입장 안내 (Target: 30초 이내)"]
+      },
+      {
+        title: "안내/민원 파트",
+        icon: React.createElement(Info, { size: 32 }),
+        items: ["자주 묻는 질문(FAQ) 리스트", "주차권 배부 프로세스", "전시장 길 안내 표준 멘트"]
+      },
+      {
+        title: "사무국 운영",
+        icon: React.createElement(Briefcase, { size: 32 }),
+        items: ["소모품 재고 관리", "분실물 처리 대장 작성", "현장 긴급 지출 증빙 관리"]
       }
     ]
   },
   // Slide 5: [5교시] 2. 베뉴 기술 사양서 (1)
   {
-    type: "content",
+    type: "grid",
     theme: "cyan",
     session: "[5교시]",
     sessionTitle: "운영의 표준: 상세 실행계획 및 파트별 운영 절차",
-    cardTitle: "2. 베뉴 기술 사양서 (Technical Rider) 검토 및 공간 장악",
-    cardIcon: React.createElement(Network, { size: 32 }),
-    items: [
+    cards: [
       {
-        title: "공간별 하드웨어 배치 최적화",
-        subItems: [
-          "전기 및 네트워크: 무대 영상 전력과 조명 전력의 분리(노이즈 방지), 행사장 내 Wi-Fi 음영 구역 확인 및 전용 회선(LAN) 설치 위치 확정.",
-          "물류 및 반입: 화물 승강기 크기와 무대 구조물의 규격 대조, 반입 차량의 대기 공간(Dock) 철저 점검."
-        ]
+        title: "전기 및 네트워크",
+        icon: React.createElement(Zap, { size: 32 }),
+        items: ["영상/조명 전력 분리 (노이즈 방지)", "Wi-Fi 음영 구역 확인", "전용 회선(LAN) 설치 위치 확정"]
+      },
+      {
+        title: "물류 및 반입",
+        icon: React.createElement(Truck, { size: 32 }),
+        items: ["화물 승강기 크기 대조", "무대 구조물 규격 확인", "반입 차량 대기 공간(Dock) 점검"]
       }
     ]
   },
@@ -436,38 +518,44 @@ export const day2Slides: SlideData[] = [
   },
   // Slide 7: [5교시] 3. 리스크 관리
   {
-    type: "content",
+    type: "grid",
     theme: "cyan",
     session: "[5교시]",
     sessionTitle: "운영의 표준: 상세 실행계획 및 파트별 운영 절차",
-    cardTitle: "3. 리스크 관리 및 대응 시나리오 (Contingency Plan)",
-    cardIcon: React.createElement(AlertTriangle, { size: 32 }),
-    items: [
+    cards: [
       {
-        title: "상황별 비상 매뉴얼",
-        subItems: [
-          "기술 리스크: 프로젝터 램프 비상 상황, 마이크 혼선, 정전 시 예비 전력(UPS) 가동 절차.",
-          "인적 리스크: 연사 노쇼(No-show) 시 대행 발표자 선정, 스태프 갑작스러운 이탈 시 백업 인력 투입 계획.",
-          "안전 리스크: 화재 경보 시 대피 방송 멘트 및 구역별 탈출 동선 재확인."
-        ]
+        title: "기술 리스크",
+        icon: React.createElement(Settings, { size: 32 }),
+        items: ["프로젝터 램프 비상 상황 대응", "마이크 혼선 방지 대책", "정전 시 예비 전력(UPS) 가동"]
+      },
+      {
+        title: "인적 리스크",
+        icon: React.createElement(UserMinus, { size: 32 }),
+        items: ["연사 노쇼(No-show) 대행 플랜", "스태프 이탈 시 백업 투입", "현장 긴급 인력 재배치"]
+      },
+      {
+        title: "안전 리스크",
+        icon: React.createElement(ShieldAlert, { size: 32 }),
+        items: ["화재 경보 시 대피 방송 멘트", "구역별 탈출 동선 재확인", "응급 환자 발생 시 이송 체계"]
       }
     ]
   },
   // Slide 8: [6교시] 1. 시나리오 고도화 (1)
   {
-    type: "content",
+    type: "grid",
     theme: "pink",
     session: "[6교시]",
     sessionTitle: "행사의 언어: 시나리오 및 기술 큐시트 마스터링",
-    cardTitle: "1. 전방위적 시나리오 (Scripting) 고도화",
-    cardIcon: React.createElement(Mic2, { size: 32 }),
-    items: [
+    cards: [
       {
-        title: "사회자 대본 (MC Script)의 입체적 구성",
-        subItems: [
-          "식순별 핵심 멘트: 오프닝(내빈 환영), 주요 외빈 소개(의전 서열 준수), 세션 전환 안내, 클로징 멘트.",
-          "상황별 가교 멘트 (Bridge): 다음 순서 준비 지연 시 사용할 수 있는 보조 멘트 및 행사의 배경 설명 데이터 확보."
-        ]
+        title: "식순별 핵심 멘트",
+        icon: React.createElement(MessageSquare, { size: 32 }),
+        items: ["오프닝 및 내빈 환영사", "주요 외빈 소개 (의전 서열)", "세션 전환 및 클로징 멘트"]
+      },
+      {
+        title: "상황별 가교 멘트",
+        icon: React.createElement(Link, { size: 32 }),
+        items: ["준비 지연 시 보조 멘트", "행사 배경 설명 데이터", "돌발 상황 수습용 멘트"]
       }
     ]
   },
@@ -492,20 +580,25 @@ export const day2Slides: SlideData[] = [
   },
   // Slide 10: [6교시] 2. 기술 통합 큐시트
   {
-    type: "content",
+    type: "grid",
     theme: "pink",
     session: "[6교시]",
     sessionTitle: "행사의 언어: 시나리오 및 기술 큐시트 마스터링",
-    cardTitle: "2. 기술 통합 큐시트 (Production Cue-Sheet) 정밀 설계",
-    cardIcon: React.createElement(Sliders, { size: 32 }),
-    items: [
+    cards: [
       {
-        title: "멀티 트랙 큐시트 (Multi-track) 작성법",
-        subItems: [
-          "비디오 (Video): 오프닝 영상, 발표 PPT, 카메라 중계 화면, 하단 자막(CG)의 송출 시점 명시.",
-          "오디오 (Audio): 등단 음악(BGM), 효과음(SFX), 마이크 On/Off 및 볼륨 페이드 인/아웃 타이밍 제어.",
-          "조명 (Lighting): 암전(Black-out), 스포트라이트(Follow-spot), 무대 배경색(Mood lighting) 전환 포인트 설정."
-        ]
+        title: "비디오 (Video)",
+        icon: React.createElement(Monitor, { size: 32 }),
+        items: ["오프닝 영상 송출 시점", "발표 PPT 및 중계 화면", "하단 자막(CG) 타이밍"]
+      },
+      {
+        title: "오디오 (Audio)",
+        icon: React.createElement(Volume2, { size: 32 }),
+        items: ["등단 음악(BGM) 및 효과음", "마이크 On/Off 제어", "볼륨 페이드 인/아웃"]
+      },
+      {
+        title: "조명 (Lighting)",
+        icon: React.createElement(Sun, { size: 32 }),
+        items: ["암전(Black-out) 포인트", "스포트라이트 추적 동선", "무대 배경색 전환 설정"]
       }
     ]
   },
@@ -639,20 +732,25 @@ export const day2Slides: SlideData[] = [
   },
   // Slide 17: [8교시] 2. 스태프 오리엔테이션
   {
-    type: "content",
+    type: "grid",
     theme: "yellow",
     session: "[8교시]",
     sessionTitle: "인력 운용 및 참가자 등록 시스템 구축",
-    cardTitle: "2. 스태프 교육 교재 (Orientation Material) 제작",
-    cardIcon: React.createElement(BookOpen, { size: 32 }),
-    items: [
+    cards: [
       {
-        title: "현장 교육 핵심 내용",
-        subItems: [
-          "행사 비전: 행사의 목적 및 비전 공유.",
-          "CS 응대 가이드: 복장 규정, 응대예절, 금지 언행 및 불만 고객(Black Consumer) 대응 멘트 교육.",
-          "소통 규약: 현장 무전기 사용법(Radio Call) 및 약어 통일."
-        ]
+        title: "행사 비전 및 목적",
+        icon: React.createElement(Eye, { size: 32 }),
+        items: ["행사 핵심 가치 공유", "주요 목표 및 기대 효과", "전체 일정 브리핑"]
+      },
+      {
+        title: "CS 응대 가이드",
+        icon: React.createElement(Smile, { size: 32 }),
+        items: ["복장 및 용모 규정", "표준 응대 예절 및 멘트", "불만 고객 대응 프로세스"]
+      },
+      {
+        title: "소통 및 운영 규약",
+        icon: React.createElement(Radio, { size: 32 }),
+        items: ["무전기 사용법(Radio Call)", "현장 약어 통일", "긴급 보고 체계 숙지"]
       }
     ]
   },
@@ -744,40 +842,41 @@ export const day3Slides: SlideData[] = [
       }
     ]
   },
-  // Slide 4: [9교시] 1. 제작물 정밀 검수 (2)
+  // Slide 4: [9교시] 1. 디자인 및 제작 사양 최종 점검
   {
-    type: "content",
+    type: "grid",
     theme: "green",
     session: "[9교시]",
     sessionTitle: "시각물의 실체화: 제작물 검수 및 정밀 물류",
-    cardTitle: "1. 디자인 및 제작 사양 최종 점검",
-    cardIcon: React.createElement(Palette, { size: 32 }),
-    items: [
+    cards: [
       {
-        title: "제작 품질 및 수량 관리",
-        subItems: [
-          "색상 감리: 키 비주얼의 브랜드 컬러가 출력소별로 다르게 나오지 않도록 색상 코드 일치 여부 확인.",
-          "규격 및 마감 확인: 배너 거치대 타입, 현수막 설치 방식이 베뉴 환경과 부합하는지 점검.",
-          "수량 확보 전략: 사전 등록 인원 대비 최소 10~15%의 여유분을 제작하여 현장 파손 및 추가 참석자 발생에 대비."
-        ]
+        title: "제작 품질 관리",
+        icon: React.createElement(Palette, { size: 32 }),
+        items: ["색상 감리: 브랜드 컬러 일치 확인", "규격 및 마감: 베뉴 환경 부합 여부", "거치대 및 설치 방식 최종 점검"]
+      },
+      {
+        title: "수량 확보 전략",
+        icon: React.createElement(Box, { size: 32 }),
+        items: ["사전 등록 인원 대비 10~15% 여유분", "현장 파손 및 추가 참석자 대비", "주요 소모품 예비 수량 확보"]
       }
     ]
   },
   // Slide 5: [9교시] 2. 물류 관리 (1)
   {
-    type: "content",
+    type: "grid",
     theme: "green",
     session: "[9교시]",
     sessionTitle: "시각물의 실체화: 제작물 검수 및 정밀 물류",
-    cardTitle: "2. 체계적인 물류 관리 및 현장 반입 (Logistics & Load-in)",
-    cardIcon: React.createElement(Box, { size: 32 }),
-    items: [
+    cards: [
       {
-        title: "정밀 패킹 및 라벨링 (Inventory Labeling)",
-        subItems: [
-          "구역별 분류 (Zoning): 상자 겉면에 내용물, 수량, 현장 배치 구역을 대형 스티커로 명확히 표기.",
-          "패킹 리스트 (Packing List) 작성: 총 몇 박스인지 번호를 매겨 운송 중 유실을 원천 방지."
-        ]
+        title: "정밀 패킹 및 라벨링",
+        icon: React.createElement(Box, { size: 32 }),
+        items: ["구역별 분류 (Zoning) 스티커 부착", "내용물 및 수량 명확히 표기", "패킹 리스트 기반 유실 방지"]
+      },
+      {
+        title: "현장 반입 프로세스",
+        icon: React.createElement(Truck, { size: 32 }),
+        items: ["반입 우선순위 준수 (무대→AV→홍보물)", "하역 공간 및 동선 사전 확보", "반입 물품 검수 및 수량 대조"]
       }
     ]
   },
@@ -868,19 +967,20 @@ export const day3Slides: SlideData[] = [
   },
   // Slide 10: [10교시] 3. 비상 상황 대응
   {
-    type: "content",
+    type: "grid",
     theme: "yellow",
     session: "[10교시]",
     sessionTitle: "무결점 방어선: 통합 안전망 및 위기관리",
-    cardTitle: "3. 비상 상황 대응 멘트 및 시나리오 (Emergency Script)",
-    cardIcon: React.createElement(PersonStanding, { size: 32 }),
-    items: [
+    cards: [
       {
-        title: "상황별 안내 방송 시나리오",
-        subItems: [
-          "화재 발생, 정전, 지진, 의료 응급 환자 발생 시 사회자 및 안내 방송 담당자가 읽을 '표준 멘트' 확정 및 연습.",
-          "대피 유도 훈련: 전 스태프가 비상구 위치와 소화기 위치를 암기하고, 실제 대피 동선을 직접 걸으며 확인."
-        ]
+        title: "상황별 안내 방송",
+        icon: React.createElement(MessageSquare, { size: 32 }),
+        items: ["화재, 정전, 지진 대응 표준 멘트", "의료 응급 환자 발생 시 안내", "사회자 및 방송 담당자 숙달 훈련"]
+      },
+      {
+        title: "대피 유도 및 현장 점검",
+        icon: React.createElement(Route, { size: 32 }),
+        items: ["비상구 및 소화기 위치 암기", "실제 대피 동선 현장 리허설", "전 스태프 구역별 임무 숙지"]
       }
     ]
   },
@@ -979,20 +1079,25 @@ export const day3Slides: SlideData[] = [
   },
   // Slide 16: [12교시] 2. 베뉴 기술 점검
   {
-    type: "content",
+    type: "grid",
     theme: "green",
     session: "[12교시]",
     sessionTitle: "현장 장악: 최종 시뮬레이션 및 행사장 인수",
-    cardTitle: "2. 베뉴(Venue) 시설물 기술 점검 (Technical Walk-through)",
-    cardIcon: React.createElement(Wrench, { size: 32 }),
-    items: [
+    cards: [
       {
-        title: "기술 파트별 최종 점검",
-        subItems: [
-          "영상 파트: LED 전광판의 데드 픽셀 확인 및 노트북 해상도 최적화.",
-          "음향 파트: 행사장 전 구역 음압 평준화 작업 및 하울링 포인트 체크.",
-          "조명 파트: 무대 위 연사 얼굴에 그림자가 지지 않는지 확인 및 암전 수준 점검."
-        ]
+        title: "영상 파트",
+        icon: React.createElement(Monitor, { size: 32 }),
+        items: ["LED 전광판 데드 픽셀 확인", "노트북 해상도 최적화", "영상 송출 싱크 점검"]
+      },
+      {
+        title: "음향 파트",
+        icon: React.createElement(Volume2, { size: 32 }),
+        items: ["전 구역 음압 평준화 작업", "하울링 포인트 체크 및 제거", "마이크 주파수 간섭 스캔"]
+      },
+      {
+        title: "조명 파트",
+        icon: React.createElement(Sun, { size: 32 }),
+        items: ["연사 얼굴 그림자 방지 셋업", "암전(Black-out) 수준 확인", "무대 배경색 전환 테스트"]
       }
     ]
   },
@@ -1093,38 +1198,44 @@ export const day4Slides: SlideData[] = [
   },
   // Slide 4: [13교시] 2. 등록 및 안내
   {
-    type: "content",
+    type: "grid",
     theme: "pink",
     session: "[13교시]",
     sessionTitle: "실전의 시간: 현장 운영 및 위기 대응",
-    cardTitle: "2. 등록 데스크 및 안내 운영 (Registration)",
-    cardIcon: React.createElement(Users, { size: 32 }),
-    items: [
+    cards: [
       {
-        title: "피크 타임 (Peak-time) 관리",
-        subItems: [
-          "대기 줄 관리: 혼잡 시 '현장 등록'과 '사전 등록' 라인을 엄격히 분리하고 유동 인력 투입.",
-          "키오스크/QR 체크인: 기술적 오류 발생 시 즉각 수동 명부 전환 프로세스 가동."
-        ]
+        title: "피크 타임 관리",
+        icon: React.createElement(Users, { size: 32 }),
+        items: ["사전/현장 등록 라인 엄격 분리", "유동 인력 집중 투입", "대기 동선 실시간 조정"]
+      },
+      {
+        title: "시스템 장애 대응",
+        icon: React.createElement(Zap, { size: 32 }),
+        items: ["키오스크/QR 오류 즉각 대응", "수동 명부 전환 프로세스 가동", "현장 기술 지원팀 상주"]
       }
     ]
   },
   // Slide 5: [13교시] 3. 돌발 상황 대응
   {
-    type: "content",
+    type: "grid",
     theme: "pink",
     session: "[13교시]",
     sessionTitle: "실전의 시간: 현장 운영 및 위기 대응",
-    cardTitle: "3. 현장 돌발 상황 및 클레임 대응 (Troubleshooting)",
-    cardIcon: React.createElement(AlertTriangle, { size: 32 }),
-    items: [
+    cards: [
       {
-        title: "클레임 대응 3원칙",
-        subItems: [
-          "Listen: 고객의 불만을 끝까지 경청하고 공감 표시.",
-          "Apologize: 즉각적인 사과와 함께 문제 해결 의지 표명.",
-          "Solve: 가능한 범위 내에서 즉각 조치하고, 상급자에게 보고하여 재발 방지."
-        ]
+        title: "Listen (경청)",
+        icon: React.createElement(Headphones, { size: 32 }),
+        items: ["고객 불만 끝까지 경청", "공감 및 이해의 태도 유지", "문제의 핵심 파악"]
+      },
+      {
+        title: "Apologize (사과)",
+        icon: React.createElement(Smile, { size: 32 }),
+        items: ["즉각적인 유감 표명", "해결 의지 및 책임감 전달", "정중한 태도 견지"]
+      },
+      {
+        title: "Solve (해결)",
+        icon: React.createElement(CheckCircle2, { size: 32 }),
+        items: ["가능한 범위 내 즉각 조치", "상급자 보고 및 재발 방지", "조치 결과 피드백"]
       }
     ]
   },
@@ -1149,20 +1260,25 @@ export const day4Slides: SlideData[] = [
   },
   // Slide 7: [14교시] 2. VIP 의전 실전
   {
-    type: "content",
+    type: "grid",
     theme: "orange",
     session: "[14교시]",
     sessionTitle: "연출의 미학: 무대 매니지먼트 및 VIP 의전 실전",
-    cardTitle: "2. VIP 의전 및 영접 실전 (Protocol in Action)",
-    cardIcon: React.createElement(Crown, { size: 32 }),
-    items: [
+    cards: [
       {
-        title: "영접 및 환송 프로세스",
-        subItems: [
-          "차량 도착 5분 전 대기 장소 이동 및 무전 공유.",
-          "VIP 대기실 내 케이터링 상태 및 온도 최종 점검.",
-          "기념품 전달 및 차량 환송 시까지 전담 인력 밀착 수행."
-        ]
+        title: "영접 프로세스",
+        icon: React.createElement(UserCheck, { size: 32 }),
+        items: ["차량 도착 5분 전 대기", "무전 공유 및 영접 동선 확보", "전담 인력 밀착 수행"]
+      },
+      {
+        title: "대기실 케어",
+        icon: React.createElement(Sun, { size: 32 }),
+        items: ["케이터링 상태 최종 점검", "실내 온도 및 조명 최적화", "프라이버시 및 보안 유지"]
+      },
+      {
+        title: "환송 프로세스",
+        icon: React.createElement(Rocket, { size: 32 }),
+        items: ["기념품 전달 및 감사 인사", "차량 환송 및 이동 확인", "최종 피드백 수렴"]
       }
     ]
   },
@@ -1187,19 +1303,20 @@ export const day4Slides: SlideData[] = [
   },
   // Slide 9: [15교시] 1. 철수 및 원상복구
   {
-    type: "content",
+    type: "grid",
     theme: "cyan",
     session: "[15교시]",
     sessionTitle: "완벽한 마무리: 철수 전략 및 사후 정산 실무",
-    cardTitle: "1. 신속한 철수 및 베뉴 원상복구 (Load-out)",
-    cardIcon: React.createElement(Truck, { size: 32 }),
-    items: [
+    cards: [
       {
-        title: "철수 우선순위 및 안전 관리",
-        subItems: [
-          "렌탈 장비 반납 → 폐기물 처리 → 사인물 제거 → 베뉴 최종 점검 순으로 진행.",
-          "철수 시 안전 사고 방지를 위한 작업자 통제 및 보호구 착용 확인."
-        ]
+        title: "철수 우선순위",
+        icon: React.createElement(Truck, { size: 32 }),
+        items: ["렌탈 장비 반납", "폐기물 처리 및 사인물 제거", "베뉴 최종 원상복구 점검"]
+      },
+      {
+        title: "안전 관리",
+        icon: React.createElement(ShieldCheck, { size: 32 }),
+        items: ["작업자 통제 및 보호구 확인", "야간 철수 시 조명 확보", "철수 중 사고 방지 교육"]
       }
     ]
   },
@@ -1262,19 +1379,20 @@ export const day4Slides: SlideData[] = [
   },
   // Slide 13: [16교시] 2. 프로젝트 아카이빙
   {
-    type: "content",
+    type: "grid",
     theme: "yellow",
     session: "[16교시]",
     sessionTitle: "지속 가능한 MICE: 사후 관리 및 커리어 로드맵",
-    cardTitle: "2. 프로젝트 아카이빙 및 지식 자산화",
-    cardIcon: React.createElement(FileSearch, { size: 32 }),
-    items: [
+    cards: [
       {
-        title: "통합 폴더 구축",
-        subItems: [
-          "기획안, 큐시트, 디자인 원본, 현장 사진, 정산서 등 모든 문서를 체계적으로 분류하여 저장.",
-          "사고 사례 및 대응 일지(Risk Log)를 별도로 기록하여 조직의 노하우로 축적."
-        ]
+        title: "통합 아카이빙",
+        icon: React.createElement(FileSearch, { size: 32 }),
+        items: ["기획안 및 큐시트 원본 저장", "디자인 소스 및 현장 사진", "정산서 및 행정 문서 분류"]
+      },
+      {
+        title: "지식 자산화",
+        icon: React.createElement(Lightbulb, { size: 32 }),
+        items: ["사고 사례 및 대응 일지 기록", "파트너사 평가 데이터 축적", "개선 제언(Lesson Learned) 정리"]
       }
     ]
   },
