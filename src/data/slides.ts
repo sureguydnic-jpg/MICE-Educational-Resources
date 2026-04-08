@@ -101,11 +101,11 @@ export const day1Slides: SlideData[] = [
       "행사 성격에 맞는 ", React.createElement("strong", { className: "text-cyan-neon font-black" }, "최적의 베뉴(Venue)"), "를 선정 및 장악하는 실무 기술을 습득함."
     ),
   },
-  // Slide 3: [1교시] 1. MICE 행사의 이해
+  // Slide 3: Track 01 1. MICE 행사의 이해
   {
     type: "content",
     theme: "cyan",
-    session: "[1교시]",
+    session: "Track 01",
     sessionTitle: "MICE 프로젝트의 시작: 기획의 본질과 기본 계획",
     cardTitle: "1. MICE 행사의 이해와 기획의 본질",
     cardIcon: React.createElement(Lightbulb, { size: 32 }),
@@ -120,11 +120,11 @@ export const day1Slides: SlideData[] = [
       }
     ]
   },
-  // Slide 4: [1교시] 2. 기본 계획서 작성 (1)
+  // Slide 4: Track 01 2. 기본 계획서 작성 (1)
   {
     type: "content",
     theme: "cyan",
-    session: "[1교시]",
+    session: "Track 01",
     sessionTitle: "MICE 프로젝트의 시작: 기획의 본질과 기본 계획",
     cardTitle: "2. 기본 계획서 (Master Plan)의 핵심 구성 요소",
     cardIcon: React.createElement(Layout, { size: 32 }),
@@ -142,11 +142,11 @@ export const day1Slides: SlideData[] = [
       }
     ]
   },
-  // Slide 5: [1교시] 2. 기본 계획서 작성 (2)
+  // Slide 5: Track 01 2. 기본 계획서 작성 (2)
   {
     type: "content",
     theme: "cyan",
-    session: "[1교시]",
+    session: "Track 01",
     sessionTitle: "MICE 프로젝트의 시작: 기획의 본질과 기본 계획",
     cardTitle: "2. 예산 및 일정 관리",
     cardIcon: React.createElement(Calendar, { size: 32 }),
@@ -161,11 +161,11 @@ export const day1Slides: SlideData[] = [
       }
     ]
   },
-  // Slide 6: [2교시] 1. 베뉴 서베이
+  // Slide 6: Track 02 1. 베뉴 서베이
   {
     type: "grid",
     theme: "purple",
-    session: "[2교시]",
+    session: "Track 02",
     sessionTitle: "공간의 미학: 베뉴 서베이 및 공간 기획",
     cards: [
       {
@@ -206,11 +206,11 @@ export const day1Slides: SlideData[] = [
       }
     ]
   },
-  // Slide 7: [2교시] 2. 공간 레이아웃
+  // Slide 7: Track 02 2. 공간 레이아웃
   {
     type: "content",
     theme: "purple",
-    session: "[2교시]",
+    session: "Track 02",
     sessionTitle: "공간의 미학: 베뉴 서베이 및 공간 기획",
     cardTitle: "2. 공간 레이아웃 및 동선 설계 (Zoning)",
     cardIcon: React.createElement(Map, { size: 32 }),
@@ -225,11 +225,11 @@ export const day1Slides: SlideData[] = [
       }
     ]
   },
-  // Slide 8: [2교시] 3. 베뉴 계약
+  // Slide 8: Track 02 3. 베뉴 계약
   {
     type: "grid",
     theme: "purple",
-    session: "[2교시]",
+    session: "Track 02",
     sessionTitle: "공간의 미학: 베뉴 서베이 및 공간 기획",
     cards: [
       {
@@ -261,11 +261,11 @@ export const day1Slides: SlideData[] = [
       }
     ]
   },
-  // Slide 9: [3교시] 1. 조직도 구성
+  // Slide 9: Track 03 1. 조직도 구성
   {
     type: "grid",
     theme: "pink",
-    session: "[3교시]",
+    session: "Track 03",
     sessionTitle: "조직의 힘: 추진 조직 구성 및 R&R 설정",
     cards: [
       {
@@ -288,11 +288,11 @@ export const day1Slides: SlideData[] = [
       }
     ]
   },
-  // Slide 10: [3교시] 2. R&R 설정
+  // Slide 10: Track 03 2. R&R 설정
   {
     type: "content",
     theme: "pink",
-    session: "[3교시]",
+    session: "Track 03",
     sessionTitle: "조직의 힘: 추진 조직 구성 및 R&R 설정",
     cardTitle: "2. 명확한 R&R (Roles & Responsibilities) 설정",
     cardIcon: React.createElement(ListChecks, { size: 32 }),
@@ -307,11 +307,11 @@ export const day1Slides: SlideData[] = [
       }
     ]
   },
-  // Slide 11: [3교시] 3. 외부 파트너십
+  // Slide 11: Track 03 3. 외부 파트너십
   {
     type: "grid",
     theme: "pink",
-    session: "[3교시]",
+    session: "Track 03",
     sessionTitle: "조직의 힘: 추진 조직 구성 및 R&R 설정",
     cards: [
       {
@@ -343,11 +343,11 @@ export const day1Slides: SlideData[] = [
       }
     ]
   },
-  // Slide 12: [4교시] 1. 키 비주얼 기획
+  // Slide 12: Track 04 1. 키 비주얼 기획
   {
     type: "content",
     theme: "yellow",
-    session: "[4교시]",
+    session: "Track 04",
     sessionTitle: "브랜딩의 시작: 키 비주얼 및 홍보 전략",
     cardTitle: "1. 키 비주얼 (Key Visual) 및 아이덴티티 기획",
     cardIcon: React.createElement(Palette, { size: 32 }),
@@ -362,11 +362,11 @@ export const day1Slides: SlideData[] = [
       }
     ]
   },
-  // Slide 13: [4교시] 2. 홍보 채널 믹스
+  // Slide 13: Track 04 2. 홍보 채널 믹스
   {
     type: "content",
     theme: "yellow",
-    session: "[4교시]",
+    session: "Track 04",
     sessionTitle: "브랜딩의 시작: 키 비주얼 및 홍보 전략",
     cardTitle: "2. 다각적 홍보 채널 믹스 (Promotion Mix)",
     cardIcon: React.createElement(Megaphone, { size: 32 }),
@@ -385,11 +385,11 @@ export const day1Slides: SlideData[] = [
       }
     ]
   },
-  // Slide 14: [4교시] 3. 참가자 유입 전략
+  // Slide 14: Track 04 3. 참가자 유입 전략
   {
     type: "content",
     theme: "yellow",
-    session: "[4교시]",
+    session: "Track 04",
     sessionTitle: "브랜딩의 시작: 키 비주얼 및 홍보 전략",
     cardTitle: "3. 참가자 유입 및 등록 유도 전략",
     cardIcon: React.createElement(Users, { size: 32 }),
@@ -410,10 +410,11 @@ export const day1Slides: SlideData[] = [
     theme: "cyan",
     icon: React.createElement(Lightbulb, { size: 80 }),
     title: "[1일차 정리 교안]",
-    mainQuote: "기획은 실행의 지도입니다",
+    mainQuote: "기초가 부실하면 현장은 무너집니다.",
     items: [
-      { label: "기본 계획의 중요성", text: "탄탄한 기본 계획은 현장의 돌발 상황에서도 흔들리지 않는 기준점이 됩니다." },
-      { label: "베뉴는 행사의 그릇", text: "베뉴의 특성을 완벽히 이해하고 활용하는 것이 공간 기획의 핵심입니다." }
+      { label: "문서화", text: "모든 구두 합의는 회의록(Minutes)으로 남길 것." },
+      { label: "수익성", text: "단순히 행사를 잘 치르는 것을 넘어, 운영사의 이익 구조를 설계 단계에서 지킬 것." },
+      { label: "안전", text: "'설마' 하는 상황에 대비한 이중, 삼중의 안전망을 1단계에서 구축할 것." }
     ]
   }
 ];
@@ -439,11 +440,11 @@ export const day2Slides: SlideData[] = [
       "모든 물적·인적 자원의 배치를 ", React.createElement("strong", { className: "text-purple-neon font-black" }, "확정함.")
     ),
   },
-  // Slide 3: [5교시] 1. 세부 실행계획서 (1)
+  // Slide 3: Track 05 1. 세부 실행계획서 (1)
   {
     type: "content",
     theme: "cyan",
-    session: "[5교시]",
+    session: "Track 05",
     sessionTitle: "운영의 표준: 상세 실행계획 및 파트별 운영 절차",
     cardTitle: "1. 세부 실행계획서 (Detailed Action Plan)의 심층 구성",
     cardIcon: React.createElement(Network, { size: 32 }),
@@ -454,11 +455,11 @@ export const day2Slides: SlideData[] = [
       }
     ]
   },
-  // Slide 4: [5교시] 1. 세부 실행계획서 (2)
+  // Slide 4: Track 05 1. 세부 실행계획서 (2)
   {
     type: "grid",
     theme: "cyan",
-    session: "[5교시]",
+    session: "Track 05",
     sessionTitle: "운영의 표준: 상세 실행계획 및 파트별 운영 절차",
     cards: [
       {
@@ -478,11 +479,11 @@ export const day2Slides: SlideData[] = [
       }
     ]
   },
-  // Slide 5: [5교시] 2. 베뉴 기술 사양서 (1)
+  // Slide 5: Track 05 2. 베뉴 기술 사양서 (1)
   {
     type: "grid",
     theme: "cyan",
-    session: "[5교시]",
+    session: "Track 05",
     sessionTitle: "운영의 표준: 상세 실행계획 및 파트별 운영 절차",
     cards: [
       {
@@ -497,11 +498,11 @@ export const day2Slides: SlideData[] = [
       }
     ]
   },
-  // Slide 6: [5교시] 2. 베뉴 기술 사양서 (2)
+  // Slide 6: Track 05 2. 베뉴 기술 사양서 (2)
   {
     type: "content",
     theme: "cyan",
-    session: "[5교시]",
+    session: "Track 05",
     sessionTitle: "운영의 표준: 상세 실행계획 및 파트별 운영 절차",
     cardTitle: "2. 구역화(Zoning) 전략",
     cardIcon: React.createElement(Map, { size: 32 }),
@@ -516,11 +517,11 @@ export const day2Slides: SlideData[] = [
       }
     ]
   },
-  // Slide 7: [5교시] 3. 리스크 관리
+  // Slide 7: Track 05 3. 리스크 관리
   {
     type: "grid",
     theme: "cyan",
-    session: "[5교시]",
+    session: "Track 05",
     sessionTitle: "운영의 표준: 상세 실행계획 및 파트별 운영 절차",
     cards: [
       {
@@ -540,11 +541,11 @@ export const day2Slides: SlideData[] = [
       }
     ]
   },
-  // Slide 8: [6교시] 1. 시나리오 고도화 (1)
+  // Slide 8: Track 06 1. 시나리오 고도화 (1)
   {
     type: "grid",
     theme: "pink",
-    session: "[6교시]",
+    session: "Track 06",
     sessionTitle: "행사의 언어: 시나리오 및 기술 큐시트 마스터링",
     cards: [
       {
@@ -559,11 +560,11 @@ export const day2Slides: SlideData[] = [
       }
     ]
   },
-  // Slide 9: [6교시] 1. 시나리오 고도화 (2)
+  // Slide 9: Track 06 1. 시나리오 고도화 (2)
   {
     type: "content",
     theme: "pink",
-    session: "[6교시]",
+    session: "Track 06",
     sessionTitle: "행사의 언어: 시나리오 및 기술 큐시트 마스터링",
     cardTitle: "1. 동선 시나리오 (Movement Script)",
     cardIcon: React.createElement(Route, { size: 32 }),
@@ -578,11 +579,11 @@ export const day2Slides: SlideData[] = [
       }
     ]
   },
-  // Slide 10: [6교시] 2. 기술 통합 큐시트
+  // Slide 10: Track 06 2. 기술 통합 큐시트
   {
     type: "grid",
     theme: "pink",
-    session: "[6교시]",
+    session: "Track 06",
     sessionTitle: "행사의 언어: 시나리오 및 기술 큐시트 마스터링",
     cards: [
       {
@@ -602,11 +603,11 @@ export const day2Slides: SlideData[] = [
       }
     ]
   },
-  // Slide 11: [6교시] 2,3. 큐시트 및 리허설
+  // Slide 11: Track 06 2,3. 큐시트 및 리허설
   {
     type: "grid",
     theme: "pink",
-    session: "[6교시]",
+    session: "Track 06",
     sessionTitle: "행사의 언어: 시나리오 및 기술 큐시트 마스터링",
     cards: [
       {
@@ -627,11 +628,11 @@ export const day2Slides: SlideData[] = [
       }
     ]
   },
-  // Slide 12: [7교시] 1. 디자인 실재화
+  // Slide 12: Track 07 1. 디자인 실재화
   {
     type: "content",
     theme: "green",
-    session: "[7교시]",
+    session: "Track 07",
     sessionTitle: "비주얼의 실제: 디자인 제작물 및 영상 콘텐츠",
     cardTitle: "1. 디자인 실재화 및 제작 프로세스 (Production)",
     cardIcon: React.createElement(Palette, { size: 32 }),
@@ -649,11 +650,11 @@ export const day2Slides: SlideData[] = [
       }
     ]
   },
-  // Slide 13: [7교시] 1,2. 물류 및 영상 콘텐츠
+  // Slide 13: Track 07 1,2. 물류 및 영상 콘텐츠
   {
     type: "grid",
     theme: "green",
-    session: "[7교시]",
+    session: "Track 07",
     sessionTitle: "비주얼의 실제: 디자인 제작물 및 영상 콘텐츠",
     cards: [
       {
@@ -674,11 +675,11 @@ export const day2Slides: SlideData[] = [
       }
     ]
   },
-  // Slide 14: [7교시] 3. 온/오프라인 홍보
+  // Slide 14: Track 07 3. 온/오프라인 홍보
   {
     type: "content",
     theme: "green",
-    session: "[7교시]",
+    session: "Track 07",
     sessionTitle: "비주얼의 실제: 디자인 제작물 및 영상 콘텐츠",
     cardTitle: "3. 온/오프라인 홍보 및 참가자 유입 (Promotion)",
     cardIcon: React.createElement(Users, { size: 32 }),
@@ -693,11 +694,11 @@ export const day2Slides: SlideData[] = [
       }
     ]
   },
-  // Slide 15: [8교시] 1. 참가자 데이터 관리
+  // Slide 15: Track 08 1. 참가자 데이터 관리
   {
     type: "content",
     theme: "yellow",
-    session: "[8교시]",
+    session: "Track 08",
     sessionTitle: "인력 운용 및 참가자 등록 시스템 구축",
     cardTitle: "1. 참가자 데이터 정밀 관리 및 시스템 구축 (RSVP)",
     cardIcon: React.createElement(Database, { size: 32 }),
@@ -715,11 +716,11 @@ export const day2Slides: SlideData[] = [
       }
     ]
   },
-  // Slide 16: [8교시] 2. 스태프 인력 배치
+  // Slide 16: Track 08 2. 스태프 인력 배치
   {
     type: "content",
     theme: "yellow",
-    session: "[8교시]",
+    session: "Track 08",
     sessionTitle: "인력 운용 및 참가자 등록 시스템 구축",
     cardTitle: "2. 전문 운영 인력 및 스태프 운용 (HR): 배치 계획",
     cardIcon: React.createElement(UsersRound, { size: 32 }),
@@ -730,11 +731,11 @@ export const day2Slides: SlideData[] = [
       }
     ]
   },
-  // Slide 17: [8교시] 2. 스태프 오리엔테이션
+  // Slide 17: Track 08 2. 스태프 오리엔테이션
   {
     type: "grid",
     theme: "yellow",
-    session: "[8교시]",
+    session: "Track 08",
     sessionTitle: "인력 운용 및 참가자 등록 시스템 구축",
     cards: [
       {
@@ -754,11 +755,11 @@ export const day2Slides: SlideData[] = [
       }
     ]
   },
-  // Slide 18: [8교시] 3. VIP 맞춤형 의전
+  // Slide 18: Track 08 3. VIP 맞춤형 의전
   {
     type: "content",
     theme: "yellow",
-    session: "[8교시]",
+    session: "Track 08",
     sessionTitle: "인력 운용 및 참가자 등록 시스템 구축",
     cardTitle: "3. VIP 맞춤형 의전 (Protocol)",
     cardIcon: React.createElement(Star, { size: 32 }),
@@ -773,7 +774,7 @@ export const day2Slides: SlideData[] = [
       }
     ]
   },
-  // Slide 19: [8교시] 3. 주간 보고 및 승인
+  // Slide 19: Track 08 3. 주간 보고 및 승인
   {
     type: "goal",
     theme: "yellow",
@@ -823,11 +824,11 @@ export const day3Slides: SlideData[] = [
       "현장 운영 인력의 숙련도를 실전 수준으로 끌어올려", React.createElement("br"), "발생 가능한 ", React.createElement("strong", { className: "text-green-neon font-black" }, "모든 리스크를 선제적으로 차단함.")
     ),
   },
-  // Slide 3: [9교시] 1. 제작물 정밀 검수 (1)
+  // Slide 3: Track 09 1. 제작물 정밀 검수 (1)
   {
     type: "content",
     theme: "green",
-    session: "[9교시]",
+    session: "Track 09",
     sessionTitle: "시각물의 실체화: 제작물 검수 및 정밀 물류",
     cardTitle: "1. 제작물 정밀 검수 매뉴얼 (Visual & Content Audit)",
     cardIcon: React.createElement(SpellCheck, { size: 32 }),
@@ -842,11 +843,11 @@ export const day3Slides: SlideData[] = [
       }
     ]
   },
-  // Slide 4: [9교시] 1. 디자인 및 제작 사양 최종 점검
+  // Slide 4: Track 09 1. 디자인 및 제작 사양 최종 점검
   {
     type: "grid",
     theme: "green",
-    session: "[9교시]",
+    session: "Track 09",
     sessionTitle: "시각물의 실체화: 제작물 검수 및 정밀 물류",
     cards: [
       {
@@ -861,11 +862,11 @@ export const day3Slides: SlideData[] = [
       }
     ]
   },
-  // Slide 5: [9교시] 2. 물류 관리 (1)
+  // Slide 5: Track 09 2. 물류 관리 (1)
   {
     type: "grid",
     theme: "green",
-    session: "[9교시]",
+    session: "Track 09",
     sessionTitle: "시각물의 실체화: 제작물 검수 및 정밀 물류",
     cards: [
       {
@@ -880,11 +881,11 @@ export const day3Slides: SlideData[] = [
       }
     ]
   },
-  // Slide 6: [9교시] 2. 물류 관리 (2)
+  // Slide 6: Track 09 2. 물류 관리 (2)
   {
     type: "grid",
     theme: "green",
-    session: "[9교시]",
+    session: "Track 09",
     sessionTitle: "시각물의 실체화: 제작물 검수 및 정밀 물류",
     cards: [
       {
@@ -905,11 +906,11 @@ export const day3Slides: SlideData[] = [
       }
     ]
   },
-  // Slide 7: [10교시] 1. 안전 네트워크
+  // Slide 7: Track 10 1. 안전 네트워크
   {
     type: "content",
     theme: "yellow",
-    session: "[10교시]",
+    session: "Track 10",
     sessionTitle: "무결점 방어선: 통합 안전망 및 위기관리",
     cardTitle: "1. 전방위적 안전 네트워크 구축 (Integrated Safety Network)",
     cardIcon: React.createElement(ShieldAlert, { size: 32 }),
@@ -927,11 +928,11 @@ export const day3Slides: SlideData[] = [
       }
     ]
   },
-  // Slide 8: [10교시] 2. 이중화 시스템 (1)
+  // Slide 8: Track 10 2. 이중화 시스템 (1)
   {
     type: "content",
     theme: "yellow",
-    session: "[10교시]",
+    session: "Track 10",
     sessionTitle: "무결점 방어선: 통합 안전망 및 위기관리",
     cardTitle: "2. 리스크 제로화를 위한 이중화 시스템 (Redundancy)",
     cardIcon: React.createElement(Copy, { size: 32 }),
@@ -946,11 +947,11 @@ export const day3Slides: SlideData[] = [
       }
     ]
   },
-  // Slide 9: [10교시] 2. 이중화 시스템 (2)
+  // Slide 9: Track 10 2. 이중화 시스템 (2)
   {
     type: "content",
     theme: "yellow",
-    session: "[10교시]",
+    session: "Track 10",
     sessionTitle: "무결점 방어선: 통합 안전망 및 위기관리",
     cardTitle: "2. 법적 및 행정적 리스크 방지",
     cardIcon: React.createElement(Gavel, { size: 32 }),
@@ -965,11 +966,11 @@ export const day3Slides: SlideData[] = [
       }
     ]
   },
-  // Slide 10: [10교시] 3. 비상 상황 대응
+  // Slide 10: Track 10 3. 비상 상황 대응
   {
     type: "grid",
     theme: "yellow",
-    session: "[10교시]",
+    session: "Track 10",
     sessionTitle: "무결점 방어선: 통합 안전망 및 위기관리",
     cards: [
       {
@@ -984,11 +985,11 @@ export const day3Slides: SlideData[] = [
       }
     ]
   },
-  // Slide 11: [11교시] 1. 인력 운영 계획
+  // Slide 11: Track 11 1. 인력 운영 계획
   {
     type: "content",
     theme: "cyan",
-    session: "[11교시]",
+    session: "Track 11",
     sessionTitle: "운영의 핵심 주체: 인력 관리 및 현장 실무 오리엔테이션",
     cardTitle: "1. 인력 운영 계획의 정밀화 (HR Management)",
     cardIcon: React.createElement(Users, { size: 32 }),
@@ -1003,11 +1004,11 @@ export const day3Slides: SlideData[] = [
       }
     ]
   },
-  // Slide 12: [11교시] 2. 현장 오리엔테이션 (1)
+  // Slide 12: Track 11 2. 현장 오리엔테이션 (1)
   {
     type: "content",
     theme: "cyan",
-    session: "[11교시]",
+    session: "Track 11",
     sessionTitle: "운영의 핵심 주체: 인력 관리 및 현장 실무 오리엔테이션",
     cardTitle: "2. 현장 오리엔테이션 (Field Orientation) 교육 내용",
     cardIcon: React.createElement(Presentation, { size: 32 }),
@@ -1025,7 +1026,7 @@ export const day3Slides: SlideData[] = [
       }
     ]
   },
-  // Slide 13: [11교시] 2. 현장 오리엔테이션 (2)
+  // Slide 13: Track 11 2. 현장 오리엔테이션 (2)
   {
     type: "goal",
     theme: "cyan",
@@ -1039,11 +1040,11 @@ export const day3Slides: SlideData[] = [
       )
     ),
   },
-  // Slide 14: [11교시] 3. VIP 및 특수 인력
+  // Slide 14: Track 11 3. VIP 및 특수 인력
   {
     type: "content",
     theme: "cyan",
-    session: "[11교시]",
+    session: "Track 11",
     sessionTitle: "운영의 핵심 주체: 인력 관리 및 현장 실무 오리엔테이션",
     cardTitle: "3. VIP 전담 의전팀 및 특수 인력 점검",
     cardIcon: React.createElement(Crown, { size: 32 }),
@@ -1058,11 +1059,11 @@ export const day3Slides: SlideData[] = [
       }
     ]
   },
-  // Slide 15: [12교시] 1. 큐시트 최종 점검
+  // Slide 15: Track 12 1. 큐시트 최종 점검
   {
     type: "content",
     theme: "green",
-    session: "[12교시]",
+    session: "Track 12",
     sessionTitle: "현장 장악: 최종 시뮬레이션 및 행사장 인수",
     cardTitle: "1. 통합 큐시트 및 시나리오 최종 정합성 점검",
     cardIcon: React.createElement(ListChecksIcon, { size: 32 }),
@@ -1077,11 +1078,11 @@ export const day3Slides: SlideData[] = [
       }
     ]
   },
-  // Slide 16: [12교시] 2. 베뉴 기술 점검
+  // Slide 16: Track 12 2. 베뉴 기술 점검
   {
     type: "grid",
     theme: "green",
-    session: "[12교시]",
+    session: "Track 12",
     sessionTitle: "현장 장악: 최종 시뮬레이션 및 행사장 인수",
     cards: [
       {
@@ -1101,7 +1102,7 @@ export const day3Slides: SlideData[] = [
       }
     ]
   },
-  // Slide 17: [12교시] 2. 부대시설 확인
+  // Slide 17: Track 12 2. 부대시설 확인
   {
     type: "goal",
     theme: "green",
@@ -1115,11 +1116,11 @@ export const day3Slides: SlideData[] = [
       )
     ),
   },
-  // Slide 18: [12교시] 3. 무결점 체크리스트
+  // Slide 18: Track 12 3. 무결점 체크리스트
   {
     type: "content",
     theme: "green",
-    session: "[12교시]",
+    session: "Track 12",
     sessionTitle: "현장 장악: 최종 시뮬레이션 및 행사장 인수",
     cardTitle: "3. 무결점 체크리스트 (Zero-Defect Checklist) 가동",
     cardIcon: React.createElement(ClipboardList, { size: 32 }),
@@ -1130,7 +1131,7 @@ export const day3Slides: SlideData[] = [
       }
     ]
   },
-  // Slide 19: [12교시] 3. 최종 킥오프 미팅
+  // Slide 19: Track 12 3. 최종 킥오프 미팅
   {
     type: "goal",
     theme: "green",
@@ -1177,11 +1178,11 @@ export const day4Slides: SlideData[] = [
       "행사 종료 후 ", React.createElement("strong", { className: "text-pink-neon font-black" }, "데이터 기반의 성과 분석"), "과", React.createElement("br"), "사후 관리를 통해 프로젝트를 성공적으로 완결함."
     ),
   },
-  // Slide 3: [13교시] 1. 현장 운영 본부
+  // Slide 3: Track 13 1. 현장 운영 본부
   {
     type: "content",
     theme: "pink",
-    session: "[13교시]",
+    session: "Track 13",
     sessionTitle: "실전의 시간: 현장 운영 및 위기 대응",
     cardTitle: "1. 현장 운영 본부 (Secretariat) 가동 및 지휘 체계",
     cardIcon: React.createElement(Radio, { size: 32 }),
@@ -1196,11 +1197,11 @@ export const day4Slides: SlideData[] = [
       }
     ]
   },
-  // Slide 4: [13교시] 2. 등록 및 안내
+  // Slide 4: Track 13 2. 등록 및 안내
   {
     type: "grid",
     theme: "pink",
-    session: "[13교시]",
+    session: "Track 13",
     sessionTitle: "실전의 시간: 현장 운영 및 위기 대응",
     cards: [
       {
@@ -1215,11 +1216,11 @@ export const day4Slides: SlideData[] = [
       }
     ]
   },
-  // Slide 5: [13교시] 3. 돌발 상황 대응
+  // Slide 5: Track 13 3. 돌발 상황 대응
   {
     type: "grid",
     theme: "pink",
-    session: "[13교시]",
+    session: "Track 13",
     sessionTitle: "실전의 시간: 현장 운영 및 위기 대응",
     cards: [
       {
@@ -1239,11 +1240,11 @@ export const day4Slides: SlideData[] = [
       }
     ]
   },
-  // Slide 6: [14교시] 1. 무대 연출 및 중계
+  // Slide 6: Track 14 1. 무대 연출 및 중계
   {
     type: "content",
     theme: "orange",
-    session: "[14교시]",
+    session: "Track 14",
     sessionTitle: "연출의 미학: 무대 매니지먼트 및 VIP 의전 실전",
     cardTitle: "1. 무대 연출 및 영상/중계 실전 매니지먼트",
     cardIcon: React.createElement(Video, { size: 32 }),
@@ -1258,11 +1259,11 @@ export const day4Slides: SlideData[] = [
       }
     ]
   },
-  // Slide 7: [14교시] 2. VIP 의전 실전
+  // Slide 7: Track 14 2. VIP 의전 실전
   {
     type: "grid",
     theme: "orange",
-    session: "[14교시]",
+    session: "Track 14",
     sessionTitle: "연출의 미학: 무대 매니지먼트 및 VIP 의전 실전",
     cards: [
       {
@@ -1282,11 +1283,11 @@ export const day4Slides: SlideData[] = [
       }
     ]
   },
-  // Slide 8: [14교시] 3. 오찬/만찬 운영
+  // Slide 8: Track 14 3. 오찬/만찬 운영
   {
     type: "content",
     theme: "orange",
-    session: "[14교시]",
+    session: "Track 14",
     sessionTitle: "연출의 미학: 무대 매니지먼트 및 VIP 의전 실전",
     cardTitle: "3. 오찬/만찬 및 케이터링 운영 (F&B Management)",
     cardIcon: React.createElement(Headphones, { size: 32 }),
@@ -1301,11 +1302,11 @@ export const day4Slides: SlideData[] = [
       }
     ]
   },
-  // Slide 9: [15교시] 1. 철수 및 원상복구
+  // Slide 9: Track 15 1. 철수 및 원상복구
   {
     type: "grid",
     theme: "cyan",
-    session: "[15교시]",
+    session: "Track 15",
     sessionTitle: "완벽한 마무리: 철수 전략 및 사후 정산 실무",
     cards: [
       {
@@ -1320,11 +1321,11 @@ export const day4Slides: SlideData[] = [
       }
     ]
   },
-  // Slide 10: [15교시] 2. 사후 정산 및 보고
+  // Slide 10: Track 15 2. 사후 정산 및 보고
   {
     type: "content",
     theme: "cyan",
-    session: "[15교시]",
+    session: "Track 15",
     sessionTitle: "완벽한 마무리: 철수 전략 및 사후 정산 실무",
     cardTitle: "2. 사후 정산 및 결과 보고서 작성 (Post-event Report)",
     cardIcon: React.createElement(BarChart3, { size: 32 }),
@@ -1339,11 +1340,11 @@ export const day4Slides: SlideData[] = [
       }
     ]
   },
-  // Slide 11: [15교시] 3. 파트너사 정산
+  // Slide 11: Track 15 3. 파트너사 정산
   {
     type: "content",
     theme: "cyan",
-    session: "[15교시]",
+    session: "Track 15",
     sessionTitle: "완벽한 마무리: 철수 전략 및 사후 정산 실무",
     cardTitle: "3. 협력업체 정산 및 감사 인사",
     cardIcon: React.createElement(Award, { size: 32 }),
@@ -1358,11 +1359,11 @@ export const day4Slides: SlideData[] = [
       }
     ]
   },
-  // Slide 12: [16교시] 1. 사후 관리 로드맵
+  // Slide 12: Track 16 1. 사후 관리 로드맵
   {
     type: "content",
     theme: "yellow",
-    session: "[16교시]",
+    session: "Track 16",
     sessionTitle: "지속 가능한 MICE: 사후 관리 및 커리어 로드맵",
     cardTitle: "1. 참가자 사후 관리 및 관계 유지 (CRM)",
     cardIcon: React.createElement(History, { size: 32 }),
@@ -1377,11 +1378,11 @@ export const day4Slides: SlideData[] = [
       }
     ]
   },
-  // Slide 13: [16교시] 2. 프로젝트 아카이빙
+  // Slide 13: Track 16 2. 프로젝트 아카이빙
   {
     type: "grid",
     theme: "yellow",
-    session: "[16교시]",
+    session: "Track 16",
     sessionTitle: "지속 가능한 MICE: 사후 관리 및 커리어 로드맵",
     cards: [
       {
@@ -1396,11 +1397,11 @@ export const day4Slides: SlideData[] = [
       }
     ]
   },
-  // Slide 14: [16교시] 3. 커리어 로드맵
+  // Slide 14: Track 16 3. 커리어 로드맵
   {
     type: "grid",
     theme: "yellow",
-    session: "[16교시]",
+    session: "Track 16",
     sessionTitle: "지속 가능한 MICE: 사후 관리 및 커리어 로드맵",
     cards: [
       {
