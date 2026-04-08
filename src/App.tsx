@@ -100,7 +100,7 @@ export default function App() {
   ];
 
   return (
-    <div className="relative min-h-screen w-full flex flex-col items-center justify-start p-8 md:p-16 bg-bg-base overflow-x-hidden overflow-y-auto">
+    <div className="relative min-h-screen w-full flex flex-col items-center justify-center p-8 md:p-16 bg-bg-base overflow-x-hidden overflow-y-auto">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-grid pointer-events-none opacity-50" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vh] bg-cyan-neon/5 rounded-full blur-[120px] pointer-events-none" />
