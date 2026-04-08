@@ -15,6 +15,7 @@ import Day3Presentation from "./components/Day3Presentation";
 import Day4Presentation from "./components/Day4Presentation";
 import LaborLawPresentation from "./components/LaborLawPresentation";
 import CopyrightModal from "./components/CopyrightModal";
+import { Day1DownloadButton } from "./components/Day1DownloadButton";
 
 interface NavItemProps {
   day: string;
@@ -47,9 +48,12 @@ const NavItem: React.FC<NavItemProps> = ({ day, title, subtitle, color, icon, de
       </div>
       
       <div className="flex-grow">
-        <span className="font-display text-xs tracking-widest uppercase opacity-60" style={{ color: color }}>
-          {day}
-        </span>
+        <div className="flex items-center justify-between mb-1">
+          <span className="font-display text-xs tracking-widest uppercase opacity-60" style={{ color: color }}>
+            {day}
+          </span>
+          {day === "Day 01" && <Day1DownloadButton />}
+        </div>
         <h3 className="text-xl font-bold text-white group-hover:text-cyan-neon transition-colors">
           {title}
         </h3>
