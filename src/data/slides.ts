@@ -616,7 +616,43 @@ export const day2Slides: SlideData[] = [
         title: "백타이밍 기법",
         icon: React.createElement(Timer, { size: 32 }),
         items: [
-          "Back-timing: 행사 종료 시간을 정확히 맞추기 위해 각 순서의 소요 시간을 역계산하여 진행 속도를 조절하는 기준점을 마련합니다."
+          React.createElement("div", { className: "flex flex-col gap-6 w-full mt-2" },
+            React.createElement("p", { className: "text-pink-neon font-black text-2xl" }, "결과에서 시작으로 역산하는 무대 운영 기법"),
+            React.createElement("div", { className: "grid grid-cols-2 gap-x-8 gap-y-8" },
+              React.createElement("div", { className: "space-y-3" },
+                React.createElement("p", { className: "font-black text-white text-xl" }, "🔴 1. 핵심 공식: 역산 사고"),
+                React.createElement("div", { className: "text-lg text-white/80 leading-relaxed space-y-1.5 break-keep" },
+                  React.createElement("p", null, "• Target (0): 반드시 지켜야 할 목표 시각"),
+                  React.createElement("p", null, "• Offset (-M): 역산한 '남은 시간'"),
+                  React.createElement("p", null, "• \"지금 몇 시?\" ❌ \"남은 시간 몇 분?\" ⭕")
+                )
+              ),
+              React.createElement("div", { className: "space-y-3" },
+                React.createElement("p", { className: "font-black text-white text-xl" }, "🟢 2. 실무 3요소"),
+                React.createElement("div", { className: "text-lg text-white/80 leading-relaxed space-y-1.5 break-keep" },
+                  React.createElement("p", null, "• Buffer: 지연 대비 5~10분 유휴 시간 삽입"),
+                  React.createElement("p", null, "• Change-over: 암전/영상 중 초 단위 전환"),
+                  React.createElement("p", null, "• Countdown: 사회자에게 '잔여 분' 공유")
+                )
+              ),
+              React.createElement("div", { className: "space-y-3" },
+                React.createElement("p", { className: "font-black text-white text-xl" }, "⚡ 3. 시각적 원칙 (HUD)"),
+                React.createElement("div", { className: "text-lg text-white/80 leading-relaxed space-y-1.5 break-keep" },
+                  React.createElement("p", null, "• Red Neon: 목표(Target) 지점 최강조"),
+                  React.createElement("p", null, "• Big Offset: 잔여 숫자를 시각보다 크게 노출"),
+                  React.createElement("p", null, "• Pulse: 진행 중인 과업에 애니메이션 부여")
+                )
+              ),
+              React.createElement("div", { className: "space-y-3" },
+                React.createElement("p", { className: "font-black text-white text-xl" }, "🎯 4. 효과"),
+                React.createElement("div", { className: "text-lg text-white/80 leading-relaxed space-y-1.5 break-keep" },
+                  React.createElement("p", null, "• 정시성: 칼같은 시작과 종료"),
+                  React.createElement("p", null, "• 예측: 병목 구간 사전 파악"),
+                  React.createElement("p", null, "• 안정: 전 스태프의 시간 기준점 통일")
+                )
+              )
+            )
+          )
         ]
       },
       {
